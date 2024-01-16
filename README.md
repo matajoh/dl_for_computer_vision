@@ -2,9 +2,10 @@
 This repository is a companion to a pair of lectures given at the University of Cambridge, which can be viewed here:
 
 [1: Multi-layer Perceptrons](https://youtu.be/LDcBRixd0jQ)
+
 [2: Convolutional Neural Nets](https://youtu.be/HfX_IOn5wjA)
 
-The lectures were part of [Engineering Tripos Part IIB, 4F12: Computer Vision](http://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iib-4f12-computer-vision-2023-24).
+The lectures were given as part of [Engineering Tripos Part IIB, 4F12: Computer Vision](http://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iib-4f12-computer-vision-2023-24).
 
 In this repository you will find the code to reproduce most of the visualizations and experiments shared in the lectures, as well as two Jupyter Notebooks providing interactive lecture notes covering a variety of topics:
 
