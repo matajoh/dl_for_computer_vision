@@ -11,6 +11,7 @@ from datasets import load_coco
 
 Prediction = NamedTuple("Prediction", [("id", int), ("score", float)])
 
+
 def classify(images: np.ndarray, batch_size: int):
     num_images = len(images)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -20,7 +21,7 @@ def classify(images: np.ndarray, batch_size: int):
     model.to(device)
     model.eval()
 
-    preprocess = weights.transforms()
+    preprocess = weights.transforms(antialias=True)
 
     top5: List[List[Prediction]] = []
     for start in tqdm(range(0, num_images, batch_size)):

@@ -4,13 +4,15 @@ from typing import List, NamedTuple
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
+from PIL import Image
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+from torchvision.models.segmentation import fcn_resnet50, FCN_ResNet50_Weights
 from tqdm import tqdm
 
-from datasets import MulticlassDataset
+from datasets import load_coco, MulticlassDataset
 
 
 class SimpleCNN(nn.Module):
@@ -458,7 +460,7 @@ def visualize_layer_output(net, layer, index, widths, height):
         ax.set_xticks([])
         ax.set_yticks([])
         fig.add_subplot(ax)
-    
+
     plt.tight_layout()
 
 
@@ -583,7 +585,7 @@ def fcn_simple():
     plt.show()
 
 
-def plot_outputs(outputs, index, path):
+def plot_outputs(outputs, index):
     fig = plt.figure(figsize=(12, 4))
     gs = gridspec.GridSpec(1, 3)
 
@@ -599,9 +601,8 @@ def plot_outputs(outputs, index, path):
             ax.set_xticks([])
             ax.set_yticks([])
             fig.add_subplot(ax)
-    
+
     plt.tight_layout()
-    fig.savefig(path)
 
 
 def fcn_simple_outputs():
@@ -630,8 +631,8 @@ def fcn_simple_outputs():
 
     outputs = net.outputs
 
-    plot_outputs([outputs[0], outputs[2], outputs[4]], index, "../figures/fcn_out0.pdf")
-    plot_outputs([outputs[6], outputs[9], outputs[10]], index, "../figures/fcn_out1.pdf")
+    plot_outputs([outputs[0], outputs[2], outputs[4]], index)
+    plot_outputs([outputs[6], outputs[9], outputs[10]], index)
 
 
 def image_data_sample():
@@ -668,6 +669,157 @@ def image_data_sample():
     plt.show()
 
 
+Segmentation = NamedTuple("Segmentation", [("img", np.ndarray), ("seg", np.ndarray), ("gt", np.ndarray)])
+
+
+def segment(dataset, num_images: int, batch_size: int) -> List[Segmentation]:
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    images = dataset["images"]
+    cat_names = dataset["cat_names"].tolist()
+    cat_ids = dataset["cat_ids"].tolist()
+    cat_colors = dataset["cat_colors"]
+
+    weights = FCN_ResNet50_Weights.DEFAULT
+    model = fcn_resnet50(weights=weights)
+    model.to(device)
+    model.eval()
+
+    preprocess = weights.transforms(antialias=True)
+    class_to_idx = {cls: idx for (idx, cls) in enumerate(weights.meta["categories"])}
+    coco_to_voc = {
+        "airplane": "aeroplane",
+        "dining table": "diningtable",
+        "motorcycle": "motorbike",
+        "potted plant": "pottedplant",
+        "couch": "sofa",
+        "tv": "tvmonitor"
+    }
+
+    result = []
+    start = 0
+    progress = tqdm(total=num_images)
+    while len(result) < num_images and start < len(images):
+        end = min(start + batch_size, len(images))
+        batch = torch.from_numpy(dataset["images"][start:end]).permute(0, 3, 1, 2).float() / 255.0
+        batch = preprocess(batch).to(device)
+
+        prediction = model(batch)["out"]
+        segs = prediction.argmax(dim=1).detach().cpu().numpy().astype(np.uint8)
+
+        for i in range(start, end):
+            gt = dataset["annotations"][i]
+            gt_labels = np.unique(gt)
+            gt_palette = np.zeros((256, 3), np.uint8)
+            seg_palette = np.zeros_like(gt_palette)
+            valid = False
+            for label in gt_labels:
+                if label == 0:
+                    continue
+
+                cat_id = cat_ids.index(label)
+                cat_name = cat_names[cat_id]
+                if cat_name in coco_to_voc:
+                    cat_name = coco_to_voc[cat_name]
+
+                if cat_name not in class_to_idx:
+                    continue
+
+                valid = True
+                gt_palette[label] = cat_colors[cat_id]
+                seg_palette[class_to_idx[cat_name]] = cat_colors[cat_id]
+
+            if valid:
+                gt = Image.fromarray(gt, "P")
+                gt.putpalette(gt_palette.reshape(-1).tolist())
+
+                seg = Image.fromarray(segs[i - start], "P")
+                seg.putpalette(seg_palette.reshape(-1).tolist())
+                result.append(Segmentation(dataset["images"][i], seg, gt))
+                progress.update(1)
+                if len(result) == num_images:
+                    break
+
+        start = end
+
+    progress.close()
+    return result
+
+
+def plot_coco_example(dataset, index):
+    images = dataset["images"]
+    annotations = dataset["annotations"]
+    image_ids = dataset["image_ids"]
+    image_objects = dataset["image_objects"]
+    bboxes = dataset["bboxes"]
+    cat_colors = dataset["cat_colors"] / 255.0
+    palette = dataset["cat_palette"].tolist()
+
+    img = images[index]
+    ann = annotations[index]
+    img_mask = image_objects[:, 0] == image_ids[index]
+    img_objs = image_objects[img_mask]
+    img_bboxes = bboxes[img_mask]
+
+    plt.rc('font', size=15)
+    plt.figure(figsize=(12, 4))
+    ax = plt.subplot(1, 3, 1)
+    ax.imshow(img)
+    ax.set_title("Image")
+    ax.axis('off')
+
+    ax = plt.subplot(1, 3, 2)
+    ax.set_title("Segmentation")
+
+    ann = Image.fromarray(ann, "P")
+    ann_ids = np.unique(ann)
+    for ann_id in ann_ids:
+        if ann_id == 0:
+            continue
+
+    ann.putpalette(palette)
+    ax.imshow(ann)
+    ax.axis('off')
+
+    ax = plt.subplot(1, 3, 3)
+    ax.set_title("Objects")
+    ax.imshow(img)
+    ax.axis('off')
+    for obj, bbox in zip(img_objs, img_bboxes):
+        ax.add_patch(plt.Rectangle((bbox[0], bbox[1]), bbox[2], bbox[3],
+                                   color=cat_colors[obj[1]],
+                                   fill=True, alpha=0.4))
+        ax.add_patch(plt.Rectangle((bbox[0], bbox[1]), bbox[2], bbox[3],
+                                   fill=False, edgecolor=cat_colors[obj[1]], linewidth=3))
+
+    plt.tight_layout()
+
+
+def fcn_coco():
+    dataset = load_coco("minival")
+    segs = segment(dataset, 1, 1)
+    seg = segs[0]
+
+    plt.rc('font', size=15)
+    plt.figure(figsize=(12, 4))
+    ax = plt.subplot(1, 3, 1)
+    ax.imshow(seg.img)
+    ax.axis('off')
+    ax.set_title("Image")
+
+    ax = plt.subplot(1, 3, 2)
+    ax.imshow(seg.seg)
+    ax.axis('off')
+    ax.set_title("Segmentation")
+
+    ax = plt.subplot(1, 3, 3)
+    ax.imshow(seg.gt)
+    ax.axis('off')
+    ax.set_title("Ground truth")
+
+    plt.tight_layout()
+    plt.show()
+
+
 def main():
     mnist_simple()
     mnist_simple_filters()
@@ -678,6 +830,7 @@ def main():
     fcn_simple()
     fcn_simple_outputs()
     image_data_sample()
+    fcn_coco()
 
 
 if __name__ == "__main__":
