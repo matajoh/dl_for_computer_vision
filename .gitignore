@@ -166,3 +166,4 @@ cython_debug/
 
 # Results
 *.Results
+*.pdf
