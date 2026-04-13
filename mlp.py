@@ -1,5 +1,7 @@
 import copy
 import os
+import pickle
+import sys
 from typing import List, NamedTuple, Union
 
 import matplotlib.pyplot as plt
@@ -129,6 +131,24 @@ def train(dataset: MulticlassDataset, net: MultiLayerPerceptron,
 ExploreSnapshot = NamedTuple("ExploreSnapshot", [("step", int), ("p0", float), ("p1", float)])
 
 
+def _load_results(path):
+    _current_module = sys.modules[__name__]
+
+    class _Unpickler(pickle.Unpickler):
+        def find_class(self, module, name):
+            if module == "__main__":
+                obj = getattr(_current_module, name, None)
+                if obj is not None:
+                    return obj
+            return super().find_class(module, name)
+
+    _pickle_module = type(sys)("_pickle_compat")
+    _pickle_module.Unpickler = _Unpickler
+    _pickle_module.load = pickle.load
+    _pickle_module.UnpicklingError = pickle.UnpicklingError
+    return torch.load(path, weights_only=False, pickle_module=_pickle_module)
+
+
 def plot_xor(fig: plt.Figure, snapshots: List[Union[Snapshot, ExploreSnapshot]], step: int, net: MultiLayerPerceptron,
              dataset: MulticlassDataset, examples: List[np.ndarray] = None,
              bounds=10, azimuth=None, planes=False):
@@ -226,7 +246,7 @@ def xor(dataset: MulticlassDataset):
     net = MultiLayerPerceptron(2, 3, 2)
     path = os.path.join(RESULTS_DIR, "xor.results")
     if os.path.exists(path):
-        results = torch.load(path, weights_only=False)
+        results = _load_results(path)
         print("xor.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
@@ -278,7 +298,7 @@ def explore(x: np.ndarray, t: np.ndarray, model: nn.Module, criterion: nn.Module
 
 def xor_explore(dataset: MulticlassDataset):
     path = os.path.join(RESULTS_DIR, "xor.results")
-    results = torch.load(path, weights_only=False)
+    results = _load_results(path)
     print("xor.results loaded")
     snapshots = results['snapshots']
     net = MultiLayerPerceptron(2, 3, 2)
@@ -299,7 +319,7 @@ def bullseye(dataset: MulticlassDataset):
     net = MultiLayerPerceptron(2, 3, 2)
     path = os.path.join(RESULTS_DIR, "bullseye.results")
     if os.path.exists(path):
-        results = torch.load(path, weights_only=False)
+        results = _load_results(path)
         print("bullseye.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
@@ -379,7 +399,7 @@ def mnist_figure():
     path = os.path.join(RESULTS_DIR, "mnist.results")
 
     if os.path.exists(path):
-        results = torch.load(path, weights_only=False)
+        results = _load_results(path)
         print("mnist.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
@@ -476,7 +496,7 @@ def attack(x: np.ndarray, t0: np.ndarray, t1: np.ndarray, model: nn.Module, crit
 def mnist_attack():
     dataset = MulticlassDataset.mnist()
     path = os.path.join(RESULTS_DIR, "mnist.results")
-    results = torch.load(path, weights_only=False)
+    results = _load_results(path)
     print("mnist.results loaded")
     snapshots = results['snapshots']
     net = MultiLayerPerceptron(784, 64, 10)

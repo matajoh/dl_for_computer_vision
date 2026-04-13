@@ -1,5 +1,7 @@
 import copy
 import os
+import pickle
+import sys
 from typing import List, NamedTuple, Tuple
 
 from matplotlib import gridspec
@@ -134,7 +136,21 @@ Snapshot = NamedTuple("Snapshot", [("step", int), ("accuracy", float), ("loss", 
 
 
 def _load_results(path):
-    return torch.load(path, weights_only=False)
+    _current_module = sys.modules[__name__]
+
+    class _Unpickler(pickle.Unpickler):
+        def find_class(self, module, name):
+            if module == "__main__":
+                obj = getattr(_current_module, name, None)
+                if obj is not None:
+                    return obj
+            return super().find_class(module, name)
+
+    _pickle_module = type(sys)('_pickle_compat')
+    _pickle_module.Unpickler = _Unpickler
+    _pickle_module.load = pickle.load
+    _pickle_module.UnpicklingError = pickle.UnpicklingError
+    return torch.load(path, weights_only=False, pickle_module=_pickle_module)
 
 
 def train_rnn(dataset: SequenceDataset, net: ElmanRNN, criterion, self_criterion,

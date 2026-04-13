@@ -1,3 +1,5 @@
+import os
+import pickle
 from typing import List, NamedTuple
 
 import matplotlib.pyplot as plt
@@ -6,6 +8,9 @@ from tqdm import tqdm
 
 from datasets import Data, MulticlassDataset
 from activations import tanh, dtanh
+
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
 
 
 def softmax(x):
@@ -191,61 +196,73 @@ def train(data: MulticlassDataset, learning_rate=0.1, num_epochs=1, batch_size=1
     return snapshots
 
 
-def three_class():
-    data = MulticlassDataset.generate_three_class(200, 100)
-    snapshots = train(data, 0.1, 2, 10)
+class _Unpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module == "__main__" and name == "Snapshot":
+            return Snapshot
+        return super().find_class(module, name)
 
-    plt.rc('font', size=15)
-    plt.figure(figsize=(8, 8))
-    ax = plt.subplot(2, 2, 1)
+
+def train_or_load(name: str, data: MulticlassDataset, *args, **kwargs) -> List[Snapshot]:
+    path = os.path.join(RESULTS_DIR, name)
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            snapshots = _Unpickler(f).load()
+        print(f"{name} loaded")
+    else:
+        snapshots = train(data, *args, **kwargs)
+        with open(path, "wb") as f:
+            pickle.dump(snapshots, f)
+    return snapshots
+
+
+def plot_three_class(fig: plt.Figure, data: MulticlassDataset, snapshots: List[Snapshot]):
+    ax = fig.add_subplot(2, 2, 1)
     data.plot(ax)
     ax.set_title("Dataset")
     ax.set_xticks([])
     ax.set_yticks([])
 
-    ax = plt.subplot(2, 2, 2)
+    ax = fig.add_subplot(2, 2, 2)
     snapshots[0].plot(ax, data)
     ax.set_title("Initial")
     ax.set_xticks([])
     ax.set_yticks([])
 
-    ax = plt.subplot(2, 2, 3)
+    ax = fig.add_subplot(2, 2, 3)
     snapshots[2].plot(ax, data)
     ax.set_title(str(snapshots[2].num_instances))
     ax.set_xticks([])
     ax.set_yticks([])
 
-    ax = plt.subplot(2, 2, 4)
+    ax = fig.add_subplot(2, 2, 4)
     snapshots[-1].plot(ax, data)
     ax.set_title(str(snapshots[-1].num_instances))
     ax.set_xticks([])
     ax.set_yticks([])
 
     plt.tight_layout()
+
+
+def three_class(data: MulticlassDataset):
+    snapshots = train_or_load("mp_trinary.results", data, 0.1, 2, 10)
+
+    plt.rc('font', size=15)
+    fig = plt.figure(figsize=(8, 8))
+    plot_three_class(fig, data, snapshots)
     plt.show()
 
 
-def uncertainty():
-    data = MulticlassDataset.generate_two_class(200, 100)
-    snapshots = train(data, 0.1, 2, 10)
-
-    p = forward(data.train.values, snapshots[-1].weights, snapshots[-1].biases)
-    start = p[:, 0].argmax()
-    end = p[:, 1].argmax()
-
+def plot_uncertainty(fig: plt.Figure, data: MulticlassDataset, snapshots: List[Snapshot]):
     stops = [0, 0.45, 0.55, 1]
     start = np.array([0, 3.5], np.float32)
     end = np.array([2, -3.5], np.float32)
     dir = end - start
 
-    plt.rc('font', size=15)
-    plt.figure(figsize=(8, 8))
-
     for i, stop in enumerate(stops):
-        ax = plt.subplot(2, 2, i+1)
+        ax = fig.add_subplot(2, 2, i+1)
         point = start + stop * dir
         p = forward(point.reshape(1, 2), snapshots[-1].weights, snapshots[-1].biases)[0]
-        print(p)
         plot_decision_boundaries(ax, data.train, snapshots[-1].weights, snapshots[-1].biases, None)
         ax.plot(point[0], point[1], 's', c="magenta", ms='15', mew='2.0')
         bins = [-4, -3]
@@ -257,6 +274,14 @@ def uncertainty():
         ax.set_yticks([])
 
     plt.tight_layout()
+
+
+def uncertainty(data: MulticlassDataset):
+    snapshots = train_or_load("mp_unc.results", data, 0.1, 2, 10)
+
+    plt.rc('font', size=15)
+    fig = plt.figure(figsize=(8, 8))
+    plot_uncertainty(fig, data, snapshots)
     plt.show()
 
 
@@ -312,46 +337,44 @@ def plot_mnist(fig: plt.Figure, data: MulticlassDataset, snapshots: List[Snapsho
     plt.tight_layout()
 
 
-def mnist():
-    data = MulticlassDataset.mnist()
-    snapshots = train(data, 0.1, 2, 100)
+def mnist(data: MulticlassDataset):
+    snapshots = train_or_load("mp_mnist.results", data, 0.1, 2, 100)
     num_snaps = len(snapshots)
     fig = plt.figure(figsize=(12, 4))
     plot_mnist(fig, data, snapshots, num_snaps - 2, num_snaps)
     plt.show()
 
 
-def xor_bullseye():
-    xor = MulticlassDataset.generate_xor(200, 100)
-    bullseye = MulticlassDataset.generate_bullseye(200, 100)
-    xor_snapshots = train(xor, 0.05, 5, 10, 10)
-    bullseye_snapshots = train(bullseye, 0.05, 5, 10, 10)
+def plot_xor_bullseye(fig: plt.Figure, xor: MulticlassDataset, bullseye: MulticlassDataset,
+                      xor_snapshots: List[Snapshot], bullseye_snapshots: List[Snapshot], i: int):
+    ax = fig.add_subplot(1, 2, 1)
+    xor_snapshots[i].plot(ax, xor, False, True)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(-10, 10)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_title("XOR")
 
-    def plot(fig: plt.Figure, i: int):
-        ax = fig.add_subplot(1, 2, 1)
-        xor_snapshots[i].plot(ax, xor, False, True)
-        ax.set_xlim(-10, 10)
-        ax.set_ylim(-10, 10)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.set_title("XOR")
+    ax = fig.add_subplot(1, 2, 2)
+    bullseye_snapshots[i].plot(ax, bullseye, False, True)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(-10, 10)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_title("Bullseye")
 
-        ax = fig.add_subplot(1, 2, 2)
-        bullseye_snapshots[i].plot(ax, bullseye, False, True)
-        ax.set_xlim(-10, 10)
-        ax.set_ylim(-10, 10)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.set_title("Bullseye")
+
+def xor_bullseye(xor: MulticlassDataset, bullseye: MulticlassDataset):
+    xor_snapshots = train_or_load("mp_xor.results", xor, 0.05, 5, 10, 10)
+    bullseye_snapshots = train_or_load("mp_bullseye.results", bullseye, 0.05, 5, 10, 10)
 
     plt.rc('font', size=15)
     fig = plt.figure(figsize=(8, 4))
-    plot(fig, len(xor_snapshots) - 1)
+    plot_xor_bullseye(fig, xor, bullseye, xor_snapshots, bullseye_snapshots, len(xor_snapshots) - 1)
     plt.show()
 
-def xor_bullseye_features():
-    xor = MulticlassDataset.generate_xor(200, 100)
-    bullseye = MulticlassDataset.generate_bullseye(200, 100)
+
+def xor_bullseye_features(xor: MulticlassDataset, bullseye: MulticlassDataset):
 
     def xor_feature(x: np.ndarray):
         return np.stack([x[:, 0], x.prod(1) / np.abs(x[:, 0])], axis=1)
@@ -363,8 +386,8 @@ def xor_bullseye_features():
     xor = xor.apply_feature(xor_feature)
     bullseye = bullseye.apply_feature(bullseye_feature)
 
-    xor_snapshots = train(xor, 0.05, 5, 10, 10)
-    bullseye_snapshots = train(bullseye, 0.05, 5, 10, 10)
+    xor_snapshots = train_or_load("mp_xor_feat.results", xor, 0.05, 5, 10, 10)
+    bullseye_snapshots = train_or_load("mp_bullseye_feat.results", bullseye, 0.05, 5, 10, 10)
 
     def plot(fig: plt.Figure, i: int):
         ax = fig.add_subplot(1, 2, 1)
@@ -390,11 +413,13 @@ def xor_bullseye_features():
 
 
 def main():
-    three_class()
-    mnist()
-    uncertainty()
-    xor_bullseye()
-    xor_bullseye_features()
+    three_class(MulticlassDataset.generate_three_class(200, 100))
+    mnist(MulticlassDataset.mnist())
+    uncertainty(MulticlassDataset.generate_two_class(200, 100))
+    xor = MulticlassDataset.generate_xor(200, 100)
+    bullseye = MulticlassDataset.generate_bullseye(200, 100)
+    xor_bullseye(xor, bullseye)
+    xor_bullseye_features(xor, bullseye)
 
 
 if __name__ == "__main__":
