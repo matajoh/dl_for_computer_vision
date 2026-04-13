@@ -23,12 +23,15 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 FILES = [
     "bullseye.results",
+    "cat_image_0.results",
+    "cat_image_16.results",
     "cifar10.results",
     "facenet.results",
     "fcn_simple.results",
     "mnist.results",
     "mnist_pool_cnn.results",
     "mnist_simple_cnn.results",
+    "rnn_emnist_finetune_128.results",
     "rnn_emnist_patch_128.results",
     "rnn_language_6_512.results",
     "transformer_cifar_vit.results",

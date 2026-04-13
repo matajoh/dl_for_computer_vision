@@ -898,6 +898,7 @@ class PositionalDataset(NamedTuple("PositionalDataset", [("input_size", int), ("
 
         pixels = np.array(image).astype(np.float32) / 255
         vals = np.linspace(0, 2, size // 2, endpoint=False, dtype=np.float32)
+        print(size, vals.shape)
         train_uv = np.stack(np.meshgrid(vals, vals), axis=-1)
         train_color = pixels[::2, ::2, :]
 

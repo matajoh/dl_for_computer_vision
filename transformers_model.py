@@ -37,13 +37,16 @@ def generate_2d_frequencies(max_log_scale: float, position_size: int):
     if position_size % 2:
         raise ValueError(f"{position_size} must be a multiple of {2}")
 
-    vals_per_input = position_size // 2
-    b_values = torch.zeros(position_size, 2)
-    b_values[:vals_per_input, 0] = 2. ** torch.linspace(0, max_log_scale, vals_per_input) - 1
-    b_values[vals_per_input:, 1] = 2. ** torch.linspace(0, max_log_scale, vals_per_input) - 1
+    embedding_size = position_size // 2
+    b_values = 2. ** torch.linspace(0, max_log_scale, embedding_size)
+    b_values = b_values.reshape(-1, 1, 1)
+    b_values = torch.eye(2) * b_values
+    b_values = b_values.reshape(-1, 2)
     b_values = b_values.transpose(0, 1)
-    a_values = torch.ones(b_values.size(1))
+    a_values = torch.ones(b_values.shape[1])
+
     return a_values, b_values
+
 
 
 class PositionalMLP(nn.Module):
@@ -91,7 +94,7 @@ def train_positional_mlp(data: PositionalDataset, net: PositionalMLP, num_steps=
     train_y = torch.from_numpy(data.train.labels).to(device)
     val_x = torch.from_numpy(data.val.values).to(device)
     val_y = torch.from_numpy(data.val.labels).to(device)
-    with tqdm(range(num_steps)) as pb:
+    with tqdm(range(num_steps), miniters=100) as pb:
         for step in pb:
             if step % 100 == 0:
                 with torch.no_grad():
@@ -109,7 +112,7 @@ def train_positional_mlp(data: PositionalDataset, net: PositionalMLP, num_steps=
 
                     mse = torch.square(output - val_y).mean().item()
                     psnr_val = -10 * math.log10(mse)
-                    print("step", step, "val:", psnr_val)
+                    pb.set_description(f"val: {psnr_val:.2f}dB")
                     net.train()
 
             optimizer.zero_grad()
@@ -122,7 +125,8 @@ def train_positional_mlp(data: PositionalDataset, net: PositionalMLP, num_steps=
             loss.backward()
             optimizer.step()
 
-            pb.set_postfix(loss=loss.item())
+            if step % 100 == 0:
+                pb.set_postfix(loss=loss.item())
 
 
 def polynomial(position_size: int):
@@ -154,7 +158,12 @@ def periodic(num_layers: int, hidden_size: int, position_size: int):
     net = PositionalMLP(data.input_size, data.output_size, hidden_size, num_layers,
                         position_size=position_size)
 
-    train_positional_mlp(data, net)
+    path = os.path.join(RESULTS_DIR, f"periodic_{num_layers}_{hidden_size}_{position_size}.results")
+    if os.path.exists(path):
+        net.load_state_dict(torch.load(path, weights_only=True))
+    else:
+        train_positional_mlp(data, net)
+        torch.save(net.state_dict(), path)
 
     plt.rc('font', size=14)
     fig = plt.figure(figsize=(12, 4))
@@ -180,19 +189,34 @@ def cat_image(position_size: int):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     net_pos = PositionalMLP(data.input_size, data.output_size, position_size=position_size)
-    train_positional_mlp(data, net_pos, device=device,
-                         num_steps=2000, lr=1e-3, weight_decay=0, sigmoid=True)
+    path_pos = os.path.join(RESULTS_DIR, f"cat_image_{position_size}.results")
+    if os.path.exists(path_pos):
+        net_pos.load_state_dict(torch.load(path_pos, weights_only=True))
+    else:
+        train_positional_mlp(data, net_pos, device=device,
+                             num_steps=2000, lr=1e-3, weight_decay=0, sigmoid=True)
+        torch.save(net_pos.cpu().state_dict(), path_pos)
 
     net_nopos = PositionalMLP(data.input_size, data.output_size, position_size=0)
-    train_positional_mlp(data, net_nopos, device=device,
-                         num_steps=2000, lr=1e-3, weight_decay=0, sigmoid=True)
+    path_nopos = os.path.join(RESULTS_DIR, "cat_image_0.results")
+    if os.path.exists(path_nopos):
+        net_nopos.load_state_dict(torch.load(path_nopos, weights_only=True))
+    else:
+        train_positional_mlp(data, net_nopos, device=device,
+                             num_steps=2000, lr=1e-3, weight_decay=0, sigmoid=True)
+        torch.save(net_nopos.cpu().state_dict(), path_nopos)
+
+    net_nopos.to(device).eval()
+    net_pos.to(device).eval()
 
     uv = torch.from_numpy(data.val.values).to(device)
-    pixels = torch.sigmoid(net_nopos(uv)).cpu().detach().numpy()
+    with torch.no_grad():
+        pixels = torch.sigmoid(net_nopos(uv)).cpu().numpy()
     psnr_nopos = -10 * math.log10(np.square(data.val.labels - pixels).mean())
     pixels_nopos = (pixels * 255).astype(np.uint8)
 
-    pixels = torch.sigmoid(net_pos(uv)).cpu().detach().numpy()
+    with torch.no_grad():
+        pixels = torch.sigmoid(net_pos(uv)).cpu().numpy()
     psnr_pos = -10 * math.log10(np.square(data.val.labels - pixels).mean())
     pixels_pos = (pixels * 255).astype(np.uint8)
 
@@ -1307,7 +1331,8 @@ def show_cifar_vit(results):
                             num_blocks, num_heads, dataset.num_classes,
                             SequencePosition(token_size))
     net.load_state_dict(results["net"])
-    evaluate_image_model(dataset, net, results["snapshots"])
+    ax1, ax2 = evaluate_image_model(dataset, net, results["snapshots"])
+    ax1.axhline(y=0.985, color='r', linestyle='--', linewidth=1)
     plt.show()
 
 
@@ -1572,8 +1597,6 @@ def plot_language_transformer_frame(fig, dataset, frame):
     ax.set_xticks(positions, [n[:1] for n in label_names])
     ax.set_yticks([])
 
-    fig.tight_layout()
-
 
 def postcodes_slider_data(results, num_examples=8):
     """Precompute postcodes salience data for interactive visualization."""
@@ -1680,6 +1703,10 @@ def temperature_diagram():
 
 if __name__ == "__main__":
     # Training
+    periodic(1, 64, 0)
+    periodic(2, 128, 0)
+    periodic(1, 64, 16)
+    cat_image(16)
     train_language_vit()
     train_language_gpt()
     train_emnist_vit()

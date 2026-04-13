@@ -659,8 +659,6 @@ def plot_rnn_frame(fig, dataset, frame):
     ax.set_xticks(positions, [n[:1] for n in label_names])
     ax.set_yticks([])
 
-    fig.tight_layout()
-
 
 def train_emnist_rnn(num_hidden=128, tokens=False, alpha_num=False):
     dataset = SequenceDataset.emnist(tokens, alpha_num).to_torch()
@@ -810,6 +808,7 @@ if __name__ == "__main__":
     # Training
     train_language_rnn()
     train_emnist_rnn()
+    train_emnist_rnn_finetune()
 
     # Visualization
     lang_results = load_language_rnn()
@@ -817,3 +816,6 @@ if __name__ == "__main__":
 
     emnist_results = load_emnist_rnn()
     show_emnist_rnn(emnist_results)
+
+    emnist_results_finetune = load_emnist_rnn_finetune()
+    show_emnist_rnn_finetune(emnist_results_finetune)
