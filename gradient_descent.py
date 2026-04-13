@@ -38,8 +38,9 @@ def plot_step(ax, step, marker="bo", grad_color="b", label="dx"):
                  length_includes_head=True, fc=grad_color, ec=grad_color)
 
 
-def gradient_descent():
-    steps = optimize(-2, 0.65, 4)
+def gradient_descent(steps=None):
+    if steps is None:
+        steps = optimize(-2, 0.65, 4)
     plt.rc('font', size=15)
     plt.figure(figsize=(8, 6))
     for i, step in enumerate(steps):
@@ -51,9 +52,11 @@ def gradient_descent():
     plt.show()
 
 
-def momentum():
-    steps = optimize(-2, 0.15, 4)
-    steps_m = optimize(7, 0.15, 4, momentum=0.4)
+def momentum(steps=None, steps_m=None):
+    if steps is None:
+        steps = optimize(-2, 0.15, 4)
+    if steps_m is None:
+        steps_m = optimize(7, 0.15, 4, momentum=0.4)
     plt.rc('font', size=15)
     plt.figure(figsize=(8, 6))
     for i, (step, step_m) in enumerate(zip(steps, steps_m)):
@@ -67,10 +70,12 @@ def momentum():
     plt.show()
 
 
-def main():
-    gradient_descent()
-    momentum()
-
-
 if __name__ == "__main__":
-    main()
+    # Computation
+    gd_steps = optimize(-2, 0.65, 4)
+    mom_steps = optimize(-2, 0.15, 4)
+    mom_steps_m = optimize(7, 0.15, 4, momentum=0.4)
+
+    # Visualization
+    gradient_descent(gd_steps)
+    momentum(mom_steps, mom_steps_m)

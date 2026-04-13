@@ -1,0 +1,29 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 1,
+            "name": "x",
+            "type": "Input"
+        },
+        {
+            "name": "e1",
+            "embedSize": 26,
+            "type": "OneHot",
+            "transition": "Token"
+        },
+        {
+            "name": "l1",
+            "hidden_size": 128,
+            "cell_size": 128,
+            "input_size": 26,
+            "type": "LSTM"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 3,
+            "type": "FullyConnected"
+        }
+    ]
+}

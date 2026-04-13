@@ -1,0 +1,32 @@
+{
+    "categoryCount": 36,
+    "layers": [
+        {
+            "channels": 1,
+            "name": "y/x",
+            "names": [
+                "y",
+                "x"
+            ],
+            "node_counts": [
+                1,
+                16
+            ],
+            "type": "InputTuple",
+            "transition": "Token"
+        },
+        {
+            "name": "r1",
+            "token_size": 128,
+            "type": "Transformer",
+            "num_blocks": 6,
+            "num_heads": 4,
+            "decoder_onehot": 36
+        },
+        {
+            "name": "f1",
+            "nodeCount": 36,
+            "type": "FullyConnected"
+        }
+    ]
+}

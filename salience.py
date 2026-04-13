@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.transform import resize
@@ -6,6 +8,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision.io import read_image
 from torchvision.models import resnet50, ResNet50_Weights
+
+from datasets import DATA_DIR
 
 
 class GradCamModel(nn.Module):
@@ -41,7 +45,7 @@ class GradCamModel(nn.Module):
 
 def salience(label: str):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    img = read_image("train.jpg")
+    img = read_image(os.path.join(DATA_DIR, "train.jpg"))
 
     weights = ResNet50_Weights.DEFAULT
     model = resnet50(weights=weights)
@@ -88,7 +92,7 @@ def salience(label: str):
     ax.imshow(img * mask, cmap="jet", interpolation="nearest")
     ax.axis('off')
     plt.tight_layout()
-    plt.savefig(f"{label.replace(' ', '_')}_salience.pdf")
+    plt.show()
 
 
 if __name__ == "__main__":

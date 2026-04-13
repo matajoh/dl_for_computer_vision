@@ -1,0 +1,37 @@
+{
+    "categoryCount": 3,
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 1,
+            "name": "x",
+            "type": "Input"
+        },
+        {
+            "name": "e1",
+            "embedSize": 36,
+            "type": "OneHot",
+            "transition": "Token"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 128,
+            "type": "FullyConnected",
+            "transition": "Token"
+        },
+        {
+            "name": "r1",
+            "token_size": 128,
+            "type": "TransformerBlock",
+            "num_blocks": 6,
+            "num_heads": 4,
+            "masked": true,
+            "transition": "Token"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 36,
+            "type": "FullyConnected"
+        }
+    ]
+}

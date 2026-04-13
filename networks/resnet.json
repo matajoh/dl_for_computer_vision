@@ -1,0 +1,189 @@
+{
+    "categoryCount": 1000,
+    "layers": [
+        {
+            "channels": 3,
+            "height": 224,
+            "name": "input",
+            "type": "Input2D",
+            "width": 224
+        },
+        {
+            "width": 224,
+            "height": 224,
+            "name": "c1",
+            "nodeCount": 64,
+            "padding": 3,
+            "stride": 2,
+            "size": 7,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "name": "b2",
+            "width": 112,
+            "height": 112,
+            "channels": 64,
+            "type": "BatchNormalization",
+            "transition": "ReLU"
+        },
+        {
+            "channels": 64,
+            "height": 112,
+            "name": "p3",
+            "op": "max",
+            "padding": 0,
+            "size": 2,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 112
+        },
+        {
+            "name": "r4",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 64,
+            "width": 56,
+            "height": 56
+        },
+        {
+            "name": "r5",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 64,
+            "width": 56,
+            "height": 56
+        },
+        {
+            "name": "r6",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 64,
+            "width": 56,
+            "height": 56
+        },
+        {
+            "name": "r7",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 128,
+            "width": 56,
+            "height": 56,
+            "stride": 2
+        },
+        {
+            "name": "r8",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 128,
+            "width": 28,
+            "height": 28
+        },
+        {
+            "name": "r9",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 128,
+            "width": 28,
+            "height": 28
+        },
+        {
+            "name": "r10",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 128,
+            "width": 28,
+            "height": 28
+        },
+        {
+            "name": "r11",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 28,
+            "height": 28,
+            "stride": 2
+        },
+        {
+            "name": "r12",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 14,
+            "height": 14
+        },
+        {
+            "name": "r13",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 14,
+            "height": 14
+        },
+        {
+            "name": "r14",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 14,
+            "height": 14
+        },
+        {
+            "name": "r15",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 14,
+            "height": 14
+        },
+        {
+            "name": "r16",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 256,
+            "width": 14,
+            "height": 14
+        },
+        {
+            "name": "r17",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 512,
+            "width": 15,
+            "height": 15,
+            "stride": 2
+        },
+        {
+            "name": "r18",
+            "type": "ResBlock",
+            "transition": "ReLU",
+            "nodeCount": 512,
+            "width": 7,
+            "height": 7
+        },
+        {
+            "name": "r19",
+            "type": "ResBlock",
+            "nodeCount": 512,
+            "width": 7,
+            "height": 7,
+            "transition": "ReLU"
+        },
+        {
+            "channels": 512,
+            "height": 7,
+            "name": "p20",
+            "op": "ave",
+            "padding": 0,
+            "size": 7,
+            "stride": 1,
+            "type": "Pooling",
+            "width": 7
+        },
+        {
+            "name": "f21",
+            "nodeCount": 1000,
+            "type": "FullyConnected"
+        }
+    ]
+}

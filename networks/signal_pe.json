@@ -1,0 +1,26 @@
+{
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 1,
+            "name": "t",
+            "type": "Input"
+        },
+        {
+            "name": "p1",
+            "embed_size": 32,
+            "type": "PositionalEncoding"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 64,
+            "type": "FullyConnected",
+            "transition": "ReLU"
+        },
+        {
+            "name": "f2",
+            "nodeCount": 1,
+            "type": "FullyConnected"
+        }
+    ]
+}

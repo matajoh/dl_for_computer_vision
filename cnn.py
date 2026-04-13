@@ -12,7 +12,10 @@ import torch.optim as optim
 from torchvision.models.segmentation import fcn_resnet50, FCN_ResNet50_Weights
 from tqdm import tqdm
 
-from datasets import load_coco, MulticlassDataset
+from datasets import load_coco, MulticlassDataset, DATA_DIR
+
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
 
 
 class SimpleCNN(nn.Module):
@@ -209,6 +212,10 @@ def compute_accuracy(output, expected_labels):
 Snapshot = NamedTuple("Snapshot", [("step", int), ("accuracy", float), ("loss", float)])
 
 
+def _load_results(path):
+    return torch.load(path, weights_only=False)
+
+
 def train_model(dataset: MulticlassDataset, net: nn.Module, criterion, batch_size=100, num_epochs=20, device="cpu"):
     """
     Trains a PyTorch model.
@@ -332,23 +339,30 @@ def evaluate_model(dataset: MulticlassDataset, net: nn.Module, snapshots: List[S
     ax2.legend(acc_line + loss_line, ["Accuracy", "Loss"], loc="center right")
 
 
-def mnist_simple():
+def train_mnist_simple():
     simple_net = SimpleCNN()
     dataset = MulticlassDataset.mnist(28).to_torch()
-    path = "mnist_simple_cnn.results"
-
+    path = os.path.join(RESULTS_DIR, "mnist_simple_cnn.results")
     if os.path.exists(path):
-        results = torch.load(path)
-        print(path, "loaded")
-    else:
-        criterion = nn.CrossEntropyLoss()
-        snapshots = train_model(dataset, simple_net, criterion, num_epochs=5)
-        results = {"snapshots": snapshots, "net": simple_net.state_dict()}
-        torch.save(results, path)
+        print(path, "already exists, skipping training")
+        return
+    criterion = nn.CrossEntropyLoss()
+    snapshots = train_model(dataset, simple_net, criterion, num_epochs=5)
+    results = {"snapshots": snapshots, "net": simple_net.state_dict()}
+    torch.save(results, path)
+    print(f"Saved {path}")
 
-    snapshots = results["snapshots"]
+
+def load_mnist_simple():
+    path = os.path.join(RESULTS_DIR, "mnist_simple_cnn.results")
+    return _load_results(path)
+
+
+def show_mnist_simple(results):
+    simple_net = SimpleCNN()
+    dataset = MulticlassDataset.mnist(28).to_torch()
     simple_net.load_state_dict(results["net"])
-    evaluate_model(dataset, simple_net, snapshots)
+    evaluate_model(dataset, simple_net, results["snapshots"])
     plt.show()
 
 
@@ -464,84 +478,87 @@ def visualize_layer_output(net, layer, index, widths, height):
     plt.tight_layout()
 
 
-def mnist_simple_filters():
+def show_mnist_simple_filters(results):
     simple_net = SimpleCNN()
     dataset = MulticlassDataset.mnist(28).to_torch()
-    path = "mnist_simple_cnn.results"
-    results = torch.load(path)
-    print(path, "loaded")
-
-    snapshots = results["snapshots"]
     simple_net.load_state_dict(results["net"])
-    evaluate_model(dataset, simple_net, snapshots)
+    evaluate_model(dataset, simple_net, results["snapshots"])
     visualize_layer_output(simple_net, 1, 3, [3, 4, 3], 4)
     plt.show()
 
 
-def mnist_pool():
+def train_mnist_pool():
     pool_net = PoolingCNN()
     dataset = MulticlassDataset.mnist(28).to_torch()
-    path = "mnist_pool_cnn.results"
-
+    path = os.path.join(RESULTS_DIR, "mnist_pool_cnn.results")
     if os.path.exists(path):
-        results = torch.load(path)
-        print(path, "loaded")
-    else:
-        criterion = nn.CrossEntropyLoss()
-        snapshots = train_model(dataset, pool_net, criterion, num_epochs=5)
-        results = {"snapshots": snapshots, "net": pool_net.state_dict()}
-        torch.save(results, path)
+        print(path, "already exists, skipping training")
+        return
+    criterion = nn.CrossEntropyLoss()
+    snapshots = train_model(dataset, pool_net, criterion, num_epochs=5)
+    results = {"snapshots": snapshots, "net": pool_net.state_dict()}
+    torch.save(results, path)
+    print(f"Saved {path}")
 
-    snapshots = results["snapshots"]
+
+def load_mnist_pool():
+    path = os.path.join(RESULTS_DIR, "mnist_pool_cnn.results")
+    return _load_results(path)
+
+
+def show_mnist_pool(results):
+    pool_net = PoolingCNN()
+    dataset = MulticlassDataset.mnist(28).to_torch()
     pool_net.load_state_dict(results["net"])
-    evaluate_model(dataset, pool_net, snapshots)
+    evaluate_model(dataset, pool_net, results["snapshots"])
     plt.show()
 
 
-def mnist_pool_filters():
+def show_mnist_pool_filters(results):
     pool_net = PoolingCNN()
     dataset = MulticlassDataset.mnist(28).to_torch()
-    path = "mnist_pool_cnn.results"
-    results = torch.load(path)
-    print(path, "loaded")
-
-    snapshots = results["snapshots"]
     pool_net.load_state_dict(results["net"])
-    evaluate_model(dataset, pool_net, snapshots)
+    evaluate_model(dataset, pool_net, results["snapshots"])
     visualize_layer_output(pool_net, 1, 3, [3, 4, 3], 4)
     plt.show()
     visualize_layer_output(pool_net, 3, 3, [3, 4, 3], 4)
     plt.show()
 
 
-def cifar():
+def train_cifar():
     dataset = MulticlassDataset.cifar().normalize().to_torch()
     cifar10_net = CifarCNN()
-    path = "cifar10.results"
+    path = os.path.join(RESULTS_DIR, "cifar10.results")
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
     if os.path.exists(path):
-        results = torch.load(path)
-        print(path, "loaded")
-    else:
-        print("Running on", device)
-        criterion = nn.CrossEntropyLoss()
-        snapshots = train_model(dataset, cifar10_net, criterion, device=device, num_epochs=30)
-        results = {"snapshots": snapshots, "net": cifar10_net.state_dict()}
-        torch.save(results, path)
+        print(path, "already exists, skipping training")
+        return
+    print("Running on", device)
+    criterion = nn.CrossEntropyLoss()
+    snapshots = train_model(dataset, cifar10_net, criterion, device=device, num_epochs=30)
+    results = {"snapshots": snapshots, "net": cifar10_net.state_dict()}
+    torch.save(results, path)
+    print(f"Saved {path}")
 
+
+def load_cifar():
+    path = os.path.join(RESULTS_DIR, "cifar10.results")
+    return _load_results(path)
+
+
+def show_cifar(results):
+    dataset = MulticlassDataset.cifar().normalize().to_torch()
+    cifar10_net = CifarCNN()
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     cifar10_net.load_state_dict(results["net"])
-    snapshots = results["snapshots"]
-    evaluate_model(dataset, cifar10_net, snapshots, device=device)
+    evaluate_model(dataset, cifar10_net, results["snapshots"], device=device)
     plt.show()
 
 
-def cifar_filters():
+def show_cifar_filters(results):
     dataset = MulticlassDataset.cifar().normalize()
     cifar10_net = CifarCNN()
-    path = "cifar10.results"
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    results = torch.load(path)
     index = 0
 
     image = dataset.unnormalize(dataset.val.values[index])
@@ -563,25 +580,33 @@ def cifar_filters():
     plt.show()
 
 
-def fcn_simple():
+def train_fcn_simple():
     dataset = MulticlassDataset.cifar().normalize().to_torch()
     net = FCNSimple()
-    path = "fcn_simple.results"
+    path = os.path.join(RESULTS_DIR, "fcn_simple.results")
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
     if os.path.exists(path):
-        results = torch.load(path)
-        print(path, "loaded")
-    else:
-        print("Running on", device)
-        criterion = nn.CrossEntropyLoss()
-        snapshots = train_model(dataset, net, criterion, num_epochs=50, device=device)
-        results = {"snapshots": snapshots, "net": net.state_dict()}
-        torch.save(results, path)
+        print(path, "already exists, skipping training")
+        return
+    print("Running on", device)
+    criterion = nn.CrossEntropyLoss()
+    snapshots = train_model(dataset, net, criterion, num_epochs=50, device=device)
+    results = {"snapshots": snapshots, "net": net.state_dict()}
+    torch.save(results, path)
+    print(f"Saved {path}")
 
+
+def load_fcn_simple():
+    path = os.path.join(RESULTS_DIR, "fcn_simple.results")
+    return _load_results(path)
+
+
+def show_fcn_simple(results):
+    dataset = MulticlassDataset.cifar().normalize().to_torch()
+    net = FCNSimple()
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     net.load_state_dict(results["net"])
-    snapshots = results["snapshots"]
-    evaluate_model(dataset, net, snapshots, device=device)
+    evaluate_model(dataset, net, results["snapshots"], device=device)
     plt.show()
 
 
@@ -605,13 +630,10 @@ def plot_outputs(outputs, index):
     plt.tight_layout()
 
 
-def fcn_simple_outputs():
+def show_fcn_simple_outputs(results):
     dataset = MulticlassDataset.cifar().normalize()
     net = FCNSimple()
-    path = "fcn_simple.results"
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    results = torch.load(path)
-    print(path, "loaded")
 
     index = 4
     image = dataset.unnormalize(dataset.val.values[index])
@@ -636,12 +658,13 @@ def fcn_simple_outputs():
 
 
 def image_data_sample():
-    data = np.load("coco_minival.npz")
-    images = data["images"]
+    coco_dir = os.path.join(DATA_DIR, "coco")
+    sample_path = os.path.join(coco_dir, sorted(os.listdir(coco_dir))[0])
+    image = np.array(Image.open(sample_path))
+    image = image.astype(np.float32) / 255.0
 
     plt.rc('font', size=15)
     fig = plt.figure(figsize=(12, 4))
-    image = images[1]
     sample = np.random.uniform(0, 1, size=image.shape)
     scramble = image.copy().reshape(-1)
     np.random.shuffle(scramble)
@@ -820,18 +843,29 @@ def fcn_coco():
     plt.show()
 
 
-def main():
-    mnist_simple()
-    mnist_simple_filters()
-    mnist_pool()
-    mnist_pool_filters()
-    cifar()
-    cifar_filters()
-    fcn_simple()
-    fcn_simple_outputs()
+if __name__ == "__main__":
+    # Training
+    train_mnist_simple()
+    train_mnist_pool()
+    train_cifar()
+    train_fcn_simple()
+
+    # Visualization
+    simple_results = load_mnist_simple()
+    show_mnist_simple(simple_results)
+    show_mnist_simple_filters(simple_results)
+
+    pool_results = load_mnist_pool()
+    show_mnist_pool(pool_results)
+    show_mnist_pool_filters(pool_results)
+
+    cifar_results = load_cifar()
+    show_cifar(cifar_results)
+    show_cifar_filters(cifar_results)
+
+    fcn_results = load_fcn_simple()
+    show_fcn_simple(fcn_results)
+    show_fcn_simple_outputs(fcn_results)
+
     image_data_sample()
     fcn_coco()
-
-
-if __name__ == "__main__":
-    main()

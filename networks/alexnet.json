@@ -1,0 +1,114 @@
+{
+    "categoryCount": 1000,
+    "layers": [
+        {
+            "channels": 3,
+            "height": 224,
+            "name": "input",
+            "type": "Input2D",
+            "width": 224
+        },
+        {
+            "width": 224,
+            "height": 224,
+            "name": "c1",
+            "nodeCount": 64,
+            "padding": 2,
+            "stride": 4,
+            "size": 11,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "channels": 64,
+            "height": 55,
+            "name": "p2",
+            "op": "max",
+            "padding": 0,
+            "size": 3,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 55
+        },
+        {
+            "width": 27,
+            "height": 27,
+            "name": "c3",
+            "nodeCount": 192,
+            "padding": 2,
+            "size": 5,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "channels": 192,
+            "height": 27,
+            "name": "p4",
+            "op": "max",
+            "padding": 0,
+            "size": 3,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 27
+        },
+        {
+            "width": 13,
+            "height": 13,
+            "name": "c5",
+            "nodeCount": 384,
+            "padding": 1,
+            "size": 3,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "width": 13,
+            "height": 13,
+            "name": "c6",
+            "nodeCount": 256,
+            "padding": 1,
+            "size": 3,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "width": 13,
+            "height": 13,
+            "name": "c7",
+            "nodeCount": 256,
+            "padding": 1,
+            "size": 3,
+            "type": "Convolutional",
+            "transition": "ReLU"
+        },
+        {
+            "channels": 256,
+            "height": 13,
+            "name": "p8",
+            "op": "max",
+            "padding": 0,
+            "size": 3,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 13,
+            "transition": "Dropout"
+        },
+        {
+            "name": "f9",
+            "nodeCount": 4096,
+            "type": "FullyConnected",
+            "transition": "ReLU+Dropout"
+        },
+        {
+            "name": "f10",
+            "nodeCount": 4096,
+            "type": "FullyConnected",
+            "transition": "ReLU"
+        },
+        {
+            "name": "f11",
+            "nodeCount": 1000,
+            "type": "FullyConnected"
+        }
+    ]
+}

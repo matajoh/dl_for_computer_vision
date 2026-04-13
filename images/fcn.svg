@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="700" height="275" viewBox="0 0 700 275">
+<defs>
+</defs>
+<rect x="28.0" y="25.5" width="32.0" height="224.0" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="49.376" y="137.5" font-size="17.919999999999998" transform="rotate(-90, 49.376, 137.5)" fill="#5b9bd5" font-family="arial" text-anchor="middle">ResNet-50</text>
+<text x="44.0" y="21.3" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">BB0</text>
+<text x="44.0" y="262.94" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">2048x87x65</text>
+<rect x="181.0" y="35.04600589148197" width="32.0" height="204.90798821703606" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<rect x="189.16" y="41.42480471318558" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="63.483603534889184" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="85.54240235659279" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="107.60120117829639" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="129.66" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="151.71879882170361" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="173.77759764340723" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="195.83639646511085" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="189.16" y="217.89519528681447" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<text x="197.0" y="30.84600589148197" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">C1[3x3]</text>
+<text x="197.0" y="253.39399410851803" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">512x87x65</text>
+<path d="M66.05,129.5L160.55,129.5L160.55,123.1L174.95,137.5L160.55,151.9L160.55,145.5L66.05000000000001,145.5Z" fill="#ddd" stroke="none" />
+<rect x="334.0" y="35.04600589148197" width="32.0" height="204.90798821703606" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="352.0" y="137.5" font-size="17.919999999999998" transform="rotate(-90, 352.0, 137.5)" fill="#5b9bd5" font-family="arial" text-anchor="middle">bn</text>
+<text x="350.0" y="30.84600589148197" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">B2</text>
+<text x="350.0" y="253.39399410851803" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">512x87x65</text>
+<path d="M219.05,129.5L313.55,129.5L313.55,123.1L327.95,137.5L313.55,151.9L313.55,145.5L219.05,145.5Z" fill="#ddd" stroke="none" />
+<rect x="487.0" y="57.03848840559834" width="32.0" height="160.9230231888033" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<rect x="495.16" y="63.43386630419876" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="85.50924420279918" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="107.58462210139959" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="129.66" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="151.7353778986004" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="173.8107557972008" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="495.16" y="195.88613369580122" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<text x="503.0" y="52.83848840559834" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">C3[1x1]</text>
+<text x="503.0" y="231.40151159440165" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">21x87x65</text>
+<path d="M372.05,129.5L466.55,129.5L466.55,123.1L480.95,137.5L466.55,151.9L466.55,145.5L372.05,145.5Z" fill="#ddd" stroke="none" />
+<circle cx="426.5" cy="137.5" r="16.0" fill="#fff" stroke="#818181" stroke-dasharray="8.0 6.4" />
+<path d="M415.3,137.5H426.5L434.4195959492893,129.58040405071065" stroke="#000" strokewidth="1" fill="none" />
+<rect x="640.0" y="42.0063999195949" width="32.0" height="190.9872001608102" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="661.376" y="137.5" font-size="17.919999999999998" transform="rotate(-90, 661.376, 137.5)" fill="#5b9bd5" font-family="arial" text-anchor="middle">bilinear</text>
+<text x="656.0" y="37.806399919594895" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">I4</text>
+<text x="656.0" y="246.43360008040509" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">21x224x224</text>
+<path d="M525.05,129.5L619.55,129.5L619.55,123.1L633.95,137.5L619.55,151.9L619.55,145.5L525.05,145.5Z" fill="#ddd" stroke="none" />
+</svg>

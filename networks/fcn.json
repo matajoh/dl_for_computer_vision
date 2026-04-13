@@ -1,0 +1,48 @@
+{
+    "layers": [
+        {
+            "name": "bb",
+            "type": "Backbone",
+            "net": "ResNet-50",
+            "channels": 2048,
+            "width": 87,
+            "height": 65
+        },
+        {
+            "name": "c1",
+            "type": "Convolutional",
+            "nodeCount": 512,
+            "size": 3,
+            "stride": 1,
+            "padding": 1,
+            "width": 87,
+            "height": 65
+        },
+        {
+            "name": "b2",
+            "type": "BatchNormalization",
+            "channels": 512,
+            "width": 87,
+            "height": 65,
+            "transition": "ReLU+Dropout"
+        },
+        {
+            "name": "c3",
+            "type": "Convolutional",
+            "nodeCount": 21,
+            "size": 1,
+            "stride": 1,
+            "padding": 0,
+            "width": 87,
+            "height": 65
+        },
+        {
+            "name": "i4",
+            "type": "Interpolate",
+            "width": 224,
+            "height": 224,
+            "channels": 21,
+            "op": "bilinear"
+        }
+    ]
+}

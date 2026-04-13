@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="420" height="200" viewBox="0 0 420 200">
+<defs>
+</defs>
+<rect x="21.0" y="34.55061230753368" width="24.000000000000004" height="130.89877538493263" fill="#e1e1e1" stroke="#7f7f7f" stroke-dasharray="8.4 6.720000000000001" />
+<text x="37.032" y="100.0" font-size="13.440000000000001" transform="rotate(-90, 37.032, 100.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">input</text>
+<text x="33.0" y="175.52938769246632" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">1x28x28</text>
+<rect x="139.0" y="16.0" width="24.000000000000004" height="168.0" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<rect x="145.12" y="20.581818181818182" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="36.92363636363636" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="53.265454545454546" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="69.60727272727273" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="85.94909090909091" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="102.2909090909091" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="118.63272727272728" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="134.97454545454548" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="151.31636363636366" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<rect x="145.12" y="167.65818181818184" width="11.76" height="11.76" fill="#5b9bd5" stroke="#41719c" />
+<text x="151.0" y="11.8" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">C1[5x5]</text>
+<text x="151.0" y="194.08" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">9x24x24</text>
+<path d="M49.7,94.0L123.50000000000001,94.0L123.50000000000001,89.2L134.3,100.0L123.50000000000001,110.80000000000001L123.50000000000001,106.00000000000001L49.7,106.00000000000001Z" fill="#ddd" stroke="none" />
+<rect x="257.0" y="29.614428049022266" width="24.000000000000004" height="140.77114390195547" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="273.032" y="100.0" font-size="13.440000000000001" transform="rotate(-90, 273.032, 100.0)" fill="#5b9bd5" font-family="arial" text-anchor="middle">max</text>
+<text x="269.0" y="25.414428049022266" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">P2[2x2@2]</text>
+<text x="269.0" y="180.46557195097776" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">9x12x12</text>
+<path d="M167.7,94.0L241.5,94.0L241.5,89.2L252.3,100.0L241.5,110.80000000000001L241.5,106.00000000000001L167.7,106.00000000000001Z" fill="#ddd" stroke="none" />
+<rect x="375.0" y="77.38692448406519" width="24.000000000000004" height="45.226151031869634" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<circle cx="387.0" cy="90.50230816135506" r="5.88" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="387.0" cy="109.49769183864494" r="5.88" fill="#5b9bd5" stroke="#41719c" />
+<text x="387.0" y="73.18692448406519" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">F3[10]</text>
+<text x="387.0" y="132.69307551593482" font-size="10.08" fill="#6868b6" text-anchor="middle" font-family="arial">10</text>
+<path d="M285.7,94.0L359.5,94.0L359.5,89.2L370.3,100.0L359.5,110.80000000000001L359.5,106.00000000000001L285.7,106.00000000000001Z" fill="#ddd" stroke="none" />
+<circle cx="328.0" cy="100.0" r="12.000000000000002" fill="#fff" stroke="#818181" />
+<path d="M321.21177490060916,106.78822509939086C334.78822509939084,106.78822509939086,321.21177490060916,93.21177490060914,334.78822509939084,93.21177490060914" stroke="#000" strokewidth="1" fill="none" />
+</svg>

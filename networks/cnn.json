@@ -1,0 +1,38 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 1,
+            "height": 28,
+            "name": "input",
+            "type": "Input2D",
+            "width": 28
+        },
+        {
+            "height": 28,
+            "name": "c1",
+            "nodeCount": 9,
+            "padding": 0,
+            "size": 5,
+            "type": "Convolutional",
+            "width": 28
+        },
+        {
+            "channels": 9,
+            "height": 24,
+            "name": "p2",
+            "op": "max",
+            "padding": 0,
+            "size": 2,
+            "stride": 2,
+            "transition": "ReLU",
+            "type": "Pooling",
+            "width": 24
+        },
+        {
+            "name": "f3",
+            "nodeCount": 10,
+            "type": "FullyConnected"
+        }
+    ]
+}

@@ -26,6 +26,10 @@ def relu(x):
     return np.where(x > 0, x, 0)
 
 
+def gelu(x):
+    return x * 0.5 * (1 + np.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * x**3)))
+
+
 def main():
     plt.rc('font', size=15)
     plt.figure(figsize=(4, 4))
@@ -36,6 +40,15 @@ def main():
     x_values = np.arange(-50, 50) / 10.0
     plt.ylim(-5, 5)
     plt.plot(x_values, relu(x_values))
+    plt.tight_layout()
+    plt.show()
+
+    plt.figure(figsize=(4, 4))
+    x_values = np.arange(-50, 50) / 10.0
+    plt.ylim(-1, 5)
+    plt.plot(x_values, relu(x_values), label='ReLU')
+    plt.plot(x_values, gelu(x_values), label='GELU')
+    plt.legend()
     plt.tight_layout()
     plt.show()
 

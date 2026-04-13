@@ -1,0 +1,23 @@
+{
+    "layers": [
+        {
+            "name": "bb",
+            "type": "Backbone",
+            "net": "ResNet-50",
+            "channels": 2048,
+            "width": 1,
+            "height": 1
+        },
+        {
+            "name": "f1",
+            "type": "FullyConnected",
+            "nodeCount": 128,
+            "transition": "ReLU+Dropout"
+        },
+        {
+            "name": "f2",
+            "type": "FullyConnected",
+            "nodeCount": 2
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "layers": [
+        {
+            "name": "c0",
+            "nodeCount": 64,
+            "width": 56,
+            "height": 56,
+            "type": "Convolutional",
+            "size": 3,
+            "padding": 1
+        },
+        {
+            "name": "b1",
+            "width": 56,
+            "height": 56,
+            "channels": 64,
+            "type": "BatchNormalization",
+            "transition": "ReLU"
+        },
+        {
+            "name": "c2",
+            "nodeCount": 64,
+            "width": 56,
+            "height": 56,
+            "type": "Convolutional",
+            "size": 3,
+            "padding": 1
+        },
+        {
+            "name": "b3",
+            "width": 56,
+            "height": 56,
+            "channels": 64,
+            "type": "BatchNormalization",
+            "transition": "ReLU"
+        }
+    ]
+}

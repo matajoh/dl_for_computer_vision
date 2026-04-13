@@ -12,6 +12,9 @@ from tqdm import tqdm
 
 from datasets import MulticlassDataset
 
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
 
 class MultiLayerPerceptron(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim):
@@ -221,14 +224,15 @@ def plot_xor(fig: plt.Figure, snapshots: List[Union[Snapshot, ExploreSnapshot]],
 
 def xor(dataset: MulticlassDataset):
     net = MultiLayerPerceptron(2, 3, 2)
-    if os.path.exists("xor.results"):
-        results = torch.load("xor.results")
+    path = os.path.join(RESULTS_DIR, "xor.results")
+    if os.path.exists(path):
+        results = torch.load(path, weights_only=False)
         print("xor.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(net.parameters(), lr=0.01)
         results = train(dataset, net, criterion, optimizer, num_epochs=5, batch_size=5, report_frequency=10)
-        torch.save(results, "xor.results")
+        torch.save(results, path)
 
     snapshots = results['snapshots']
     net.load_state_dict(snapshots[1].state_dict)
@@ -273,7 +277,8 @@ def explore(x: np.ndarray, t: np.ndarray, model: nn.Module, criterion: nn.Module
 
 
 def xor_explore(dataset: MulticlassDataset):
-    results = torch.load("xor.results")
+    path = os.path.join(RESULTS_DIR, "xor.results")
+    results = torch.load(path, weights_only=False)
     print("xor.results loaded")
     snapshots = results['snapshots']
     net = MultiLayerPerceptron(2, 3, 2)
@@ -292,14 +297,15 @@ def xor_explore(dataset: MulticlassDataset):
 
 def bullseye(dataset: MulticlassDataset):
     net = MultiLayerPerceptron(2, 3, 2)
-    if os.path.exists("bullseye.results"):
-        results = torch.load("bullseye.results")
+    path = os.path.join(RESULTS_DIR, "bullseye.results")
+    if os.path.exists(path):
+        results = torch.load(path, weights_only=False)
         print("bullseye.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(net.parameters(), lr=0.01)
         results = train(dataset, net, criterion, optimizer, num_epochs=15, batch_size=5, report_frequency=10)
-        torch.save(results, "bullseye.results")
+        torch.save(results, path)
 
     snapshots = results['snapshots']
 
@@ -370,15 +376,16 @@ def plot_mnist(fig: plt.Figure, snapshots: List[Snapshot], step: int, net: Multi
 def mnist_figure():
     dataset = MulticlassDataset.mnist()
     net = MultiLayerPerceptron(784, 64, 10)
+    path = os.path.join(RESULTS_DIR, "mnist.results")
 
-    if os.path.exists("mnist.results"):
-        results = torch.load("mnist.results")
+    if os.path.exists(path):
+        results = torch.load(path, weights_only=False)
         print("mnist.results loaded")
     else:
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.SGD(net.parameters(), lr=0.1)
         results = train(dataset, net, criterion, optimizer, num_epochs=5)
-        torch.save(results, "mnist.results")
+        torch.save(results, path)
 
     snapshots = results["snapshots"]
     plt.rc('font', size=15)
@@ -468,7 +475,8 @@ def attack(x: np.ndarray, t0: np.ndarray, t1: np.ndarray, model: nn.Module, crit
 
 def mnist_attack():
     dataset = MulticlassDataset.mnist()
-    results = torch.load("mnist.results")
+    path = os.path.join(RESULTS_DIR, "mnist.results")
+    results = torch.load(path, weights_only=False)
     print("mnist.results loaded")
     snapshots = results['snapshots']
     net = MultiLayerPerceptron(784, 64, 10)
@@ -541,13 +549,13 @@ def main():
     torch.manual_seed(20080524)
 
     dataset = MulticlassDataset.generate_xor(200, 100)
-    #xor(dataset)
-    #xor_explore(dataset)
+    xor(dataset)
+    xor_explore(dataset)
 
     dataset = MulticlassDataset.generate_bullseye(200, 100)
-    #bullseye(dataset)
+    bullseye(dataset)
 
-    #mnist_figure()
+    mnist_figure()
     mnist_attack()
 
     gradients("sigmoid")

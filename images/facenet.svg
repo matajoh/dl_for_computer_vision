@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="350" height="150" viewBox="0 0 350 150">
+<defs>
+</defs>
+<g>
+<rect x="14.0" y="14.0" width="17.428571428571427" height="122.0" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="25.642285714285716" y="75.0" font-size="9.759999999999998" transform="rotate(-90, 25.642285714285716, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">ResNet-50</text>
+</g>
+<text x="22.714285714285715" y="9.8" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">BB0</text>
+<text x="22.714285714285715" y="143.32" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">2048x1x1</text>
+<rect x="166.28571428571428" y="36.18181818181818" width="17.428571428571427" height="77.63636363636364" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<circle cx="175.0" cy="44.22272727272727" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="175.0" cy="56.53363636363636" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="175.0" cy="68.84454545454545" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="175.0" cy="81.15545454545455" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="175.0" cy="93.46636363636364" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="175.0" cy="105.77727272727273" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<text x="175.0" y="31.98181818181818" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">F1[128]</text>
+<text x="175.0" y="121.1381818181818" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">128</text>
+<path d="M35.785714285714285,70.64285714285714L155.39285714285717,70.64285714285714L155.39285714285717,67.15714285714286L164.10714285714286,75.0L155.39285714285717,82.84285714285714L155.39285714285717,79.35714285714286L35.78571428571429,79.35714285714286Z" fill="#ddd" stroke="none" />
+<rect x="318.57142857142856" y="60.0" width="17.428571428571427" height="30" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<circle cx="327.2857142857143" cy="68.57666666666667" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="327.2857142857143" cy="81.42333333333333" r="4.269999999999999" fill="#5b9bd5" stroke="#41719c" />
+<text x="327.2857142857143" y="55.8" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">F2[2]</text>
+<text x="327.2857142857143" y="97.32" font-size="7.3199999999999985" fill="#6868b6" text-anchor="middle" font-family="arial">2</text>
+<path d="M188.07142857142856,70.64285714285714L307.6785714285714,70.64285714285714L307.6785714285714,67.15714285714286L316.3928571428571,75.0L307.6785714285714,82.84285714285714L307.6785714285714,79.35714285714286L188.07142857142856,79.35714285714286Z" fill="#ddd" stroke="none" />
+<circle cx="251.1428571428571" cy="75.0" r="8.714285714285714" fill="#fff" stroke="#818181" stroke-dasharray="4.357142857142857 3.4857142857142858" />
+<path d="M245.04285714285712,75.0H251.1428571428571L255.45620850809505,70.68664863476207" stroke="#000" strokewidth="1" fill="none" />
+</svg>

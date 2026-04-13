@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="420" height="150" viewBox="0 0 420 150">
+<defs>
+</defs>
+<g>
+<rect x="10.5" y="52.83333333333333" width="14.25" height="44.333333333333336" fill="#e1e1e1" stroke="#7f7f7f" stroke-dasharray="4.9875 3.99" />
+<text x="20.019" y="75.0" font-size="7.98" transform="rotate(-90, 20.019, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">x + class</text>
+</g>
+<text x="17.625" y="103.15166666666666" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">16</text>
+<rect x="77.0" y="36.208333333333336" width="14.25" height="77.58333333333333" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<circle cx="84.125" cy="43.2878125" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="53.85854166666667" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="64.42927083333333" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="75.0" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="85.57072916666667" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="96.14145833333333" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="84.125" cy="106.7121875" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<text x="84.125" y="32.00833333333334" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">F1[128]</text>
+<text x="84.125" y="119.77666666666666" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">128</text>
+<path d="M28.3125,71.4375L68.09375,71.4375L68.09375,68.5875L75.21875,75.0L68.09375,81.41250000000001L68.09375,78.56250000000001L28.3125,78.56250000000001Z" fill="#ddd" stroke="none" />
+<circle cx="50.875" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="47.3125" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="50.875" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="54.4375" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<text x="54.4375" y="76.78125" font-size="7.125" fill="#000" text-anchor="middle" font-family="monospace">[t]</text>
+<rect x="137.515" y="17.144999999999992" width="211.47" height="115.71000000000001" fill="white" stroke="#5b9bd5" stroke-dasharray="4.9875 3.99" />
+<text x="273.175" y="31.109999999999992" font-size="9.975" fill="#5b9bd5" font-family="arial" text-anchor="middle">x 6</text>
+<g>
+<rect x="143.5" y="25.124999999999993" width="14.25" height="99.75000000000001" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="153.019" y="75.0" font-size="7.98" transform="rotate(-90, 153.019, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">Positional Encoding</text>
+</g>
+<g>
+<rect x="176.275" y="67.51875" width="9.975" height="9.975" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="181.26250000000002" y="74.18204999999999" font-size="5.585999999999999" transform="" fill="#5b9bd5" text-anchor="middle" font-family="arial">Q</text>
+</g>
+<g>
+<rect x="176.275" y="84.97500000000001" width="9.975" height="9.975" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="181.26250000000002" y="91.6383" font-size="5.585999999999999" transform="" fill="#5b9bd5" text-anchor="middle" font-family="arial">K</text>
+</g>
+<g>
+<rect x="176.275" y="102.43125" width="9.975" height="9.975" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="181.26250000000002" y="109.09455" font-size="5.585999999999999" transform="" fill="#5b9bd5" text-anchor="middle" font-family="arial">V</text>
+</g>
+<g>
+<rect x="186.25" y="55.05" width="14.25" height="69.825" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="195.769" y="89.9625" font-size="7.98" transform="rotate(-90, 195.769, 89.9625)" fill="#5b9bd5" text-anchor="middle" font-family="arial">MHSA x4</text>
+</g>
+<path d="M160.24375,70.01249999999999L170.040625,70.01249999999999L170.040625,68.01749999999998L175.02812500000002,72.50625L170.040625,76.99499999999998L170.040625,74.99999999999997L160.24375,74.99999999999997Z" fill="#ddd" stroke="none" />
+<path d="M160.24375,87.46875L170.040625,87.46875L170.040625,85.47375L175.02812500000002,89.9625L170.040625,94.45124999999999L170.040625,92.45624999999998L160.24375,92.45624999999998Z" fill="#ddd" stroke="none" />
+<path d="M160.24375,104.925L170.040625,104.925L170.040625,102.92999999999999L175.02812500000002,107.41875L170.040625,111.9075L170.040625,109.9125L160.24375,109.9125Z" fill="#ddd" stroke="none" />
+<path d="M160.24375,37.59374999999999L208.515625,37.59374999999999L208.515625,35.598749999999995L213.503125,40.08749999999999L208.515625,44.576249999999995L208.515625,42.58125L160.24374999999998,42.58125Z" fill="#ddd" stroke="none" />
+<path d="M202.99375,87.46875L208.515625,87.46875L208.515625,85.47375L213.503125,89.9625L208.515625,94.45124999999999L208.515625,92.45624999999998L202.99375,92.45624999999998Z" fill="#ddd" stroke="none" />
+<g>
+<rect x="214.75" y="25.124999999999993" width="10.6875" height="99.75000000000001" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="221.88925" y="75.0" font-size="5.984999999999999" transform="rotate(-90, 221.88925, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">add</text>
+</g>
+<g>
+<rect x="225.4375" y="25.124999999999993" width="10.6875" height="99.75000000000001" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="232.57675" y="75.0" font-size="5.984999999999999" transform="rotate(-90, 232.57675, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">LN</text>
+</g>
+<path d="M238.61875,87.46875L244.140625,87.46875L244.140625,85.47375L249.128125,89.9625L244.140625,94.45124999999999L244.140625,92.45624999999998L238.61875,92.45624999999998Z" fill="#ddd" stroke="none" />
+<path d="M309.86875,87.46875L315.390625,87.46875L315.390625,85.47375L320.378125,89.9625L315.390625,94.45124999999999L315.390625,92.45624999999998L309.86875,92.45624999999998Z" fill="#ddd" stroke="none" />
+<rect x="250.375" y="55.05" width="14.25" height="69.825" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="257.5" y="130.86" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">128</text>
+<rect x="293.125" y="55.05" width="14.25" height="69.825" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="300.25" y="130.86" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">128</text>
+<path d="M268.54375,87.46875L286.890625,87.46875L286.890625,85.47375L291.878125,89.9625L286.890625,94.45124999999999L286.890625,92.45624999999998L268.54375,92.45624999999998Z" fill="#ddd" stroke="none" />
+<circle cx="279.5875" cy="89.9625" r="4.9875" fill="#fff" stroke="#818181" />
+<path d="M276.09625,89.9625H278.09125Q279.05849573932477,90.49150426067519,279.5875,89.9625L282.05618654981754,87.49381345018247" stroke="#000" strokewidth="1" fill="none" />
+<circle cx="257.5" cy="61.1596875" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="61.1596875" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="70.760625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="70.760625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="80.3615625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="80.3615625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="89.9625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="89.9625" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="99.5634375" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="99.5634375" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="109.164375" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="109.164375" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="257.5" cy="118.76531250000001" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="300.25" cy="118.76531250000001" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<path d="M238.61875,37.59374999999999L315.390625,37.59374999999999L315.390625,35.598749999999995L320.378125,40.08749999999999L315.390625,44.576249999999995L315.390625,42.58125L238.61874999999998,42.58125Z" fill="#ddd" stroke="none" />
+<g>
+<rect x="321.625" y="25.124999999999993" width="10.6875" height="99.75000000000001" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="328.76425" y="75.0" font-size="5.984999999999999" transform="rotate(-90, 328.76425, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">add</text>
+</g>
+<g>
+<rect x="332.3125" y="25.124999999999993" width="10.6875" height="99.75000000000001" fill="#e1e1e1" stroke="#7f7f7f" />
+<text x="339.45175" y="75.0" font-size="5.984999999999999" transform="rotate(-90, 339.45175, 75.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">LN</text>
+</g>
+<path d="M94.8125,71.4375L134.59375,71.4375L134.59375,68.5875L141.71875,75.0L134.59375,81.41250000000001L134.59375,78.56250000000001L94.8125,78.56250000000001Z" fill="#ddd" stroke="none" />
+<circle cx="117.375" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="113.8125" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="117.375" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<circle cx="120.9375" cy="75.0" r="7.125" fill="#fff" stroke="#818181" />
+<text x="120.9375" y="76.78125" font-size="7.125" fill="#000" text-anchor="middle" font-family="monospace">[t]</text>
+<rect x="395.25" y="46.34999895034052" width="14.25" height="57.30000209931897" rx="4" ry="4" fill="#e1e1e1" stroke="#7f7f7f" />
+<circle cx="402.375" cy="53.572499300227015" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="402.375" cy="64.2862496501135" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="402.375" cy="75.0" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="402.375" cy="85.7137503498865" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="402.375" cy="96.42750069977299" r="3.4912499999999995" fill="#5b9bd5" stroke="#41719c" />
+<text x="402.375" y="42.14999895034052" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">F3[36]</text>
+<text x="402.375" y="109.6350010496595" font-size="5.984999999999999" fill="#6868b6" text-anchor="middle" font-family="arial">36</text>
+<path d="M346.5625,71.4375L386.34375,71.4375L386.34375,68.5875L393.46875,75.0L386.34375,81.41250000000001L386.34375,78.56250000000001L346.5625,78.56250000000001Z" fill="#ddd" stroke="none" />
+</svg>

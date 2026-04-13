@@ -1,0 +1,23 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 16,
+            "name": "x",
+            "type": "Input",
+            "transition": "Token"
+        },
+        {
+            "name": "r1",
+            "nodeCount": 128,
+            "type": "RNN",
+            "transition": "TanH",
+            "embedSize": 26,
+            "outputs": {
+                "HO": 36,
+                "HY": 16
+            }
+        }
+    ]
+}

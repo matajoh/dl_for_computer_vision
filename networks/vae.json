@@ -1,0 +1,180 @@
+{
+    "layers": [
+        {
+            "channels": 1,
+            "height": 32,
+            "name": "input",
+            "type": "Input2D",
+            "width": 32
+        },
+        {
+            "name": "c1",
+            "type": "Convolutional",
+            "nodeCount": 32,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "width": 32,
+            "height": 32
+        },
+        {
+            "name": "b2",
+            "type": "BatchNormalization",
+            "channels": 32,
+            "width": 16,
+            "height": 16,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "c3",
+            "type": "Convolutional",
+            "nodeCount": 64,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "width": 16,
+            "height": 16
+        },
+        {
+            "name": "b4",
+            "type": "BatchNormalization",
+            "channels": 64,
+            "width": 8,
+            "height": 8,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "c5",
+            "type": "Convolutional",
+            "nodeCount": 128,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "width": 8,
+            "height": 8
+        },
+        {
+            "name": "b6",
+            "type": "BatchNormalization",
+            "channels": 128,
+            "width": 4,
+            "height": 4,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "c7",
+            "type": "Convolutional",
+            "nodeCount": 256,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "width": 4,
+            "height": 4
+        },
+        {
+            "name": "b8",
+            "type": "BatchNormalization",
+            "channels": 256,
+            "width": 2,
+            "height": 2,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "n9",
+            "type": "Normal",
+            "nodeCount": 2
+        },
+        {
+            "name": "f10",
+            "type": "FullyConnected",
+            "nodeCount": 1024
+        },
+        {
+            "name": "t11",
+            "type": "ConvolutionalTranspose",
+            "nodeCount": 128,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "outputPadding": 1,
+            "width": 2,
+            "height": 2
+        },
+        {
+            "name": "b12",
+            "type": "BatchNormalization",
+            "channels": 128,
+            "width": 4,
+            "height": 4,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "t13",
+            "type": "ConvolutionalTranspose",
+            "nodeCount": 64,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "outputPadding": 1,
+            "width": 4,
+            "height": 4
+        },
+        {
+            "name": "b14",
+            "type": "BatchNormalization",
+            "channels": 64,
+            "width": 8,
+            "height": 8,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "t15",
+            "type": "ConvolutionalTranspose",
+            "nodeCount": 32,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "outputPadding": 1,
+            "width": 8,
+            "height": 8
+        },
+        {
+            "name": "b16",
+            "type": "BatchNormalization",
+            "channels": 32,
+            "width": 16,
+            "height": 16,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "t17",
+            "type": "ConvolutionalTranspose",
+            "nodeCount": 32,
+            "size": 3,
+            "stride": 2,
+            "padding": 1,
+            "outputPadding": 1,
+            "width": 16,
+            "height": 16
+        },
+        {
+            "name": "b18",
+            "type": "BatchNormalization",
+            "channels": 32,
+            "width": 32,
+            "height": 32,
+            "transition": "LeakyReLU"
+        },
+        {
+            "name": "c19",
+            "type": "Convolutional",
+            "nodeCount": 1,
+            "size": 3,
+            "stride": 1,
+            "padding": 1,
+            "width": 32,
+            "height": 32,
+            "transition": "Sigmoid"
+        }
+    ]
+}

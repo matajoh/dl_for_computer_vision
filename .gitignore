@@ -161,9 +161,8 @@ cython_debug/
 
 
 # Data
-*.pkl
-*.npz
+data/*.npz
 
 # Results
-*.Results
+results/
 *.pdf

@@ -1,0 +1,22 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 784,
+            "name": "input",
+            "type": "Input"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 64,
+            "type": "FullyConnected",
+            "transition": "Sigmoid"
+        },
+        {
+            "name": "f2",
+            "nodeCount": 10,
+            "type": "FullyConnected"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="420" height="300" viewBox="0 0 420 300">
+<defs>
+</defs>
+<rect x="28.0" y="62.73414974337824" width="32.0" height="174.53170051324352" fill="#e1e1e1" stroke="#7f7f7f" stroke-dasharray="11.2 8.959999999999999" />
+<text x="49.376" y="150.0" font-size="17.919999999999998" transform="rotate(-90, 49.376, 150.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">input</text>
+<text x="44.0" y="250.70585025662177" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">1x28x28</text>
+<rect x="194.0" y="38.0" width="32.0" height="224.0" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<rect x="202.16" y="44.10909090909091" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="65.89818181818183" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="87.68727272727273" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="109.47636363636363" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="131.26545454545453" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="153.05454545454543" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="174.84363636363634" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="196.63272727272724" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="218.42181818181814" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<rect x="202.16" y="240.21090909090904" width="15.679999999999998" height="15.679999999999998" fill="#5b9bd5" stroke="#41719c" />
+<text x="210.0" y="33.8" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">C1[5x5]</text>
+<text x="210.0" y="275.44" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">9x24x24</text>
+<path d="M66.7,142.0L172.9,142.0L172.9,135.6L187.3,150.0L172.9,164.4L172.9,158.0L66.7,158.0Z" fill="#ddd" stroke="none" />
+<rect x="360.0" y="119.84923264542024" width="32.0" height="60.301534709159505" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<circle cx="376.0" cy="137.33641088180676" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="376.0" cy="162.66358911819327" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<text x="376.0" y="115.64923264542024" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">F2[10]</text>
+<text x="376.0" y="193.59076735457975" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">10</text>
+<path d="M232.7,142.0L338.9,142.0L338.9,135.6L353.3,150.0L338.9,164.4L338.9,158.0L232.7,158.0Z" fill="#ddd" stroke="none" />
+<circle cx="293.0" cy="150.0" r="16.0" fill="#fff" stroke="#818181" />
+<path d="M283.9490332008122,159.05096679918782C302.0509667991878,159.05096679918782,283.9490332008122,140.94903320081218,302.0509667991878,140.94903320081218" stroke="#000" strokewidth="1" fill="none" />
+</svg>

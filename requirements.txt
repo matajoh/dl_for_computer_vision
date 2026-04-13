@@ -1,6 +1,13 @@
 jupyter
-matplotlib
+ipywidgets
+matplotlib>=3.7
+requests
 tqdm
-numpy
-scipy
-scikit-image
+numpy>=1.24
+scipy>=1.10
+scikit-image>=0.21
+scikit-learn>=1.3
+torch>=2.0
+torchvision>=0.15
+ultralytics>=8.0
+open-clip-torch>=2.20

@@ -1,0 +1,38 @@
+{
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 2,
+            "name": "uv",
+            "type": "Input"
+        },
+        {
+            "name": "p1",
+            "embed_size": 64,
+            "type": "PositionalEncoding"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 256,
+            "type": "FullyConnected",
+            "transition": "ReLU"
+        },
+        {
+            "name": "f2",
+            "nodeCount": 256,
+            "type": "FullyConnected",
+            "transition": "ReLU"
+        },
+        {
+            "name": "f3",
+            "nodeCount": 256,
+            "type": "FullyConnected",
+            "transition": "ReLU"
+        },
+        {
+            "name": "f4",
+            "nodeCount": 3,
+            "type": "FullyConnected"
+        }
+    ]
+}

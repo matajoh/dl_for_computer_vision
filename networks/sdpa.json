@@ -1,0 +1,17 @@
+{
+    "layers": [
+        {
+            "type": "InputTuple",
+            "name": "q/k/v",
+            "names": ["q", "k", "v"],
+            "node_counts": [128, 128, 128],
+            "transition": "Token"
+        },
+        {
+            "type": "ScaledDotProductAttention",
+            "name": "sdpa",
+            "token_size": 128,
+            "masked": false
+        }
+    ]
+}

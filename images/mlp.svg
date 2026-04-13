@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="420" height="300" viewBox="0 0 420 300">
+<defs>
+</defs>
+<rect x="28.0" y="38.0" width="32.0" height="224.0" fill="#e1e1e1" stroke="#7f7f7f" stroke-dasharray="11.2 8.959999999999999" />
+<text x="49.376" y="150.0" font-size="17.919999999999998" transform="rotate(-90, 49.376, 150.0)" fill="#5b9bd5" text-anchor="middle" font-family="arial">input</text>
+<text x="44.0" y="275.44" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">784</text>
+<rect x="194.0" y="80.10709518069282" width="32.0" height="139.78580963861435" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<circle cx="210.0" cy="94.47649655763773" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="210.0" cy="116.68589793458264" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="210.0" cy="138.89529931152754" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="210.0" cy="161.10470068847243" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="210.0" cy="183.31410206541733" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="210.0" cy="205.52350344236223" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<text x="210.0" y="75.90709518069282" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">F1[64]</text>
+<text x="210.0" y="233.33290481930717" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">64</text>
+<path d="M66.7,142.0L172.9,142.0L172.9,135.6L187.3,150.0L172.9,164.4L172.9,158.0L66.7,158.0Z" fill="#ddd" stroke="none" />
+<rect x="360.0" y="111.30346597457586" width="32.0" height="77.39306805084829" fill="#e1e1e1" stroke="#7f7f7f" rx="4" ry="4" />
+<circle cx="376.0" cy="126.73173298728793" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="376.0" cy="150.0" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<circle cx="376.0" cy="173.26826701271207" r="7.839999999999999" fill="#5b9bd5" stroke="#41719c" />
+<text x="376.0" y="107.10346597457585" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">F2[10]</text>
+<text x="376.0" y="202.13653402542414" font-size="13.44" fill="#6868b6" text-anchor="middle" font-family="arial">10</text>
+<path d="M232.7,142.0L338.9,142.0L338.9,135.6L353.3,150.0L338.9,164.4L338.9,158.0L232.7,158.0Z" fill="#ddd" stroke="none" />
+<circle cx="293.0" cy="150.0" r="16.0" fill="#fff" stroke="#818181" />
+<path d="M283.9490332008122,159.05096679918782C302.0509667991878,159.05096679918782,283.9490332008122,140.94903320081218,302.0509667991878,140.94903320081218" stroke="#000" strokewidth="1" fill="none" />
+</svg>

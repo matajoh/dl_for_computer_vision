@@ -139,6 +139,67 @@ def show_convolutions():
     plt.show()
 
 
+from typing import NamedTuple
+
+
+ConvFrame = NamedTuple("ConvFrame", [("loc", np.ndarray), ("patch", np.ndarray), ("output", np.ndarray)])
+
+
+def conv2d_frames():
+    """Precompute all frames for an interactive 2D convolution animation."""
+    dataset = MulticlassDataset.mnist()
+    input_image = dataset.train.values[0].reshape(28, 28)
+    output_image = np.zeros_like(input_image)
+    input_image = np.pad(input_image, [[2, 2], [2, 2]], mode='constant')
+    np.random.seed(42)
+    filter_image = np.random.normal(size=(5, 5)).astype(np.float32)
+    filter_image /= np.linalg.norm(filter_image, ord=2)
+
+    frames = []
+    for row in range(28):
+        for col in range(28):
+            patch = input_image[row:row+5, col:col+5].copy()
+            output_image[row, col] = np.sum(patch * filter_image)
+            frames.append(ConvFrame(np.array([col, row]), patch, output_image.copy()))
+
+    return input_image, filter_image, frames
+
+
+def plot_conv2d_frame(fig, input_image, filter_image, frames, index):
+    """Plot a single frame of the convolution animation."""
+    import matplotlib.patches as mpatches
+
+    frame = frames[index]
+    vmin = np.min(frames[-1].output)
+    vmax = np.max(frames[-1].output)
+    grid = plt.GridSpec(2, 3, width_ratios=[6, 2, 6])
+    input_ax = fig.add_subplot(grid[:, 0])
+    input_ax.imshow(input_image[2:-2, 2:-2], interpolation='nearest', cmap='gray')
+    input_rect = mpatches.Rectangle(frame.loc - 2, 5, 5, edgecolor='r', fill=False)
+    input_ax.add_patch(input_rect)
+    input_ax.set_xticks([])
+    input_ax.set_yticks([])
+    input_ax.set_title("input")
+    filter_ax = fig.add_subplot(grid[0, 1])
+    filter_ax.imshow(filter_image, interpolation='nearest', cmap='gray')
+    filter_ax.set_xticks([])
+    filter_ax.set_yticks([])
+    filter_ax.set_title("filter")
+    patch_ax = fig.add_subplot(grid[1, 1])
+    patch_ax.imshow(frame.patch, interpolation='nearest', cmap='gray')
+    patch_ax.set_xticks([])
+    patch_ax.set_yticks([])
+    patch_ax.set_title("patch")
+    output_ax = fig.add_subplot(grid[:, 2])
+    output_ax.imshow(frame.output, interpolation='nearest', cmap='gray', vmin=vmin, vmax=vmax)
+    output_rect = mpatches.Rectangle(frame.loc - 0.5, 1, 1, edgecolor='r', fill=False)
+    output_ax.add_patch(output_rect)
+    output_ax.set_xticks([])
+    output_ax.set_yticks([])
+    output_ax.set_title("output")
+    plt.tight_layout()
+
+
 alien = np.array([[0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
                   [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
                   [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
@@ -169,7 +230,7 @@ def display_image(ax, x, label, vrange=None):
     ax.set_xlabel(label)
 
 
-def transposed_convolution():
+def train_transposed_convolution():
     image = torch.from_numpy(2 * alien - 1).unsqueeze(0).unsqueeze(0)
     conv = nn.Conv2d(1, 2, kernel_size=3, padding=1, stride=2, bias=False, padding_mode="reflect")
     tconv = nn.ConvTranspose2d(2, 1, kernel_size=3, padding=1, stride=2, bias=False)
@@ -187,14 +248,22 @@ def transposed_convolution():
         if i % 100 == 0:
             print(i, loss.item())
 
-    plt.rc('font', size=15)
-    fig = plt.figure(figsize=(10, 4))
-    gs = fig.add_gridspec(2, 3, width_ratios=[13, 3, 7])
-
     c = conv.weight[:, 0].detach().numpy()
     t = tconv.weight[:, 0].detach().numpy()
     z = conv(image).detach().squeeze().numpy()
     result = module(image).detach().squeeze().numpy()
+    return {"c": c, "t": t, "z": z, "result": result}
+
+
+def show_transposed_convolution(data):
+    c = data["c"]
+    t = data["t"]
+    z = data["z"]
+    result = data["result"]
+
+    plt.rc('font', size=15)
+    fig = plt.figure(figsize=(10, 4))
+    gs = fig.add_gridspec(2, 3, width_ratios=[13, 3, 7])
 
     display_image(fig.add_subplot(gs[:, 0]), alien, "Input")
     display_image(fig.add_subplot(gs[0, 1]), c[0], "C0", (c.min(), c.max()))
@@ -217,6 +286,10 @@ def transposed_convolution():
 
 
 if __name__ == "__main__":
+    # Computation
+    tconv_data = train_transposed_convolution()
+
+    # Visualization
     show_kernels()
     show_convolutions()
-    transposed_convolution()
+    show_transposed_convolution(tconv_data)

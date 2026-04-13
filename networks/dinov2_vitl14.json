@@ -1,0 +1,48 @@
+{
+    "categoryCount": 3,
+    "layers": [
+        {
+            "channels": 1,
+            "nodeCount": 273,
+            "name": "x",
+            "type": "Input",
+            "transition": "Token"
+        },
+        {
+            "name": "f1",
+            "nodeCount": 1024,
+            "type": "FullyConnected",
+            "transition": "Token"
+        },
+        {
+            "name": "r1",
+            "token_size": 1024,
+            "type": "TransformerBlock",
+            "num_blocks": 24,
+            "num_heads": 16,
+            "transition": "Identity"
+        },
+        {
+            "name": "d1",
+            "nodeCount": 2048,
+            "type": "FullyConnected",
+            "transition": "GELU"
+        },
+        {
+            "name": "d2",
+            "nodeCount": 2048,
+            "type": "FullyConnected",
+            "transition": "GELU"
+        },
+        {
+            "name": "d3",
+            "nodeCount": 384,
+            "type": "FullyConnected"
+        },
+        {
+            "name": "d4",
+            "nodeCount": 131072,
+            "type": "FullyConnected"
+        }
+    ]
+}

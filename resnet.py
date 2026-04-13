@@ -1,12 +1,17 @@
+import glob
+import os
 from typing import List, NamedTuple
 
 import matplotlib.pyplot as plt
 import numpy as np
+from PIL import Image
 import torch
 from torchvision.models import resnet50, ResNet50_Weights
 from tqdm import tqdm
 
-from datasets import load_coco
+from datasets import DATA_DIR
+
+COCO_DIR = os.path.join(DATA_DIR, "coco")
 
 
 Prediction = NamedTuple("Prediction", [("id", int), ("score", float)])
@@ -40,8 +45,8 @@ def classify(images: np.ndarray, batch_size: int):
 
 
 def coco(num_images: int, batch_size: int):
-    dataset = load_coco("minival")
-    images = dataset["images"][:num_images]
+    sample_paths = sorted(glob.glob(os.path.join(COCO_DIR, "*.jpg")))
+    images = np.stack([np.array(Image.open(p)) for p in sample_paths[:num_images]])
     categories, images, top5 = classify(images, batch_size)
     image = 0
     fig = plt.figure(figsize=(8, 4))

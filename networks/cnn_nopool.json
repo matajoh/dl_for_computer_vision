@@ -1,0 +1,27 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 1,
+            "height": 28,
+            "name": "input",
+            "type": "Input2D",
+            "width": 28
+        },
+        {
+            "height": 28,
+            "name": "c1",
+            "nodeCount": 9,
+            "padding": 0,
+            "size": 5,
+            "type": "Convolutional",
+            "width": 28,
+            "transition": "Sigmoid"
+        },
+        {
+            "name": "f2",
+            "nodeCount": 10,
+            "type": "FullyConnected"
+        }
+    ]
+}

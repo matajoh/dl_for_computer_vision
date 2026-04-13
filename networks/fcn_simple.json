@@ -1,0 +1,105 @@
+{
+    "categoryCount": 10,
+    "layers": [
+        {
+            "channels": 3,
+            "height": 32,
+            "name": "input",
+            "type": "Input2D",
+            "width": 32
+        },
+        {
+            "height": 32,
+            "name": "c1",
+            "nodeCount": 32,
+            "padding": 2,
+            "size": 5,
+            "type": "Convolutional",
+            "width": 32
+        },
+        {
+            "channels": 32,
+            "height": 32,
+            "name": "p2",
+            "op": "max",
+            "padding": 1,
+            "size": 3,
+            "stride": 2,
+            "transition": "ReLU",
+            "type": "Pooling",
+            "width": 32
+        },
+        {
+            "height": 16,
+            "name": "c3",
+            "nodeCount": 32,
+            "padding": 2,
+            "size": 5,
+            "transition": "ReLU",
+            "type": "Convolutional",
+            "width": 16
+        },
+        {
+            "channels": 32,
+            "height": 16,
+            "name": "p4",
+            "op": "ave",
+            "padding": 1,
+            "size": 3,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 16
+        },
+        {
+            "height": 8,
+            "name": "c5",
+            "nodeCount": 64,
+            "padding": 2,
+            "size": 5,
+            "transition": "ReLU",
+            "type": "Convolutional",
+            "width": 8
+        },
+        {
+            "channels": 64,
+            "height": 8,
+            "name": "p6",
+            "op": "ave",
+            "padding": 1,
+            "size": 3,
+            "stride": 2,
+            "type": "Pooling",
+            "width": 8
+        },
+        {
+            "name": "c7",
+            "nodeCount": 128,
+            "width": 4,
+            "height": 4,
+            "type": "Convolutional",
+            "size": 1,
+            "padding": 0,
+            "transition": "ReLU+Dropout"
+        },
+        {
+            "name": "c8",
+            "nodeCount": 10,
+            "width": 4,
+            "height": 4,
+            "type": "Convolutional",
+            "size": 1,
+            "padding": 0
+        },
+        {
+            "channels": 10,
+            "height": 4,
+            "name": "p9",
+            "op": "ave",
+            "padding": 0,
+            "stride": 1,
+            "size": 4,
+            "type": "Pooling",
+            "width": 4
+        }
+    ]
+}
