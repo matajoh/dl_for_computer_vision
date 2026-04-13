@@ -48,9 +48,50 @@ def load_cifar():
     return np.load(path)
 
 
+def _create_coco_demo():
+    import glob
+    coco_dir = os.path.join(DATA_DIR, "coco")
+    jpg_paths = sorted(glob.glob(os.path.join(coco_dir, "*.jpg")))
+    local_ids = [int(os.path.splitext(os.path.basename(p))[0]) for p in jpg_paths]
+
+    full = load_coco("minival")
+    full_ids = full["image_ids"]
+    indices = []
+    for lid in local_ids:
+        idx = np.where(full_ids == lid)[0]
+        if len(idx) == 1:
+            indices.append(idx[0])
+
+    indices = np.array(indices)
+    subset_image_ids = full_ids[indices]
+
+    obj_mask = np.isin(full["image_objects"][:, 0], subset_image_ids)
+
+    path = _data_path("coco_demo.npz")
+    np.savez(
+        path,
+        metadata=full["metadata"],
+        images=full["images"][indices],
+        image_licenses=full["image_licenses"][indices],
+        annotations=full["annotations"][indices],
+        bboxes=full["bboxes"][obj_mask],
+        image_ids=subset_image_ids,
+        image_objects=full["image_objects"][obj_mask],
+        cat_names=full["cat_names"],
+        cat_ids=full["cat_ids"],
+        cat_colors=full["cat_colors"],
+        cat_palette=full["cat_palette"],
+        object_ids=full["object_ids"],
+        object_names=full["object_names"],
+    )
+    return path
+
+
 def load_coco(name: str):
     if name == "minitrain":
         url = "https://matajohdata.blob.core.windows.net/datasets/cued/coco_minitrain.npz"
+    elif name == "demo":
+        url = "https://matajohdata.blob.core.windows.net/datasets/cued/coco_demo.npz"
     else:
         url = "https://matajohdata.blob.core.windows.net/datasets/cued/coco_minival.npz"
 
