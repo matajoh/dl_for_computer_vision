@@ -1,0 +1,389 @@
+<svg width="800" height="350" viewBox="182 138 956 418" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    overflow="hidden">
+    <g>
+        <rect x="249" y="206" width="57" height="57" stroke="#622C0F" stroke-width="2" stroke-miterlimit="8"
+            fill="#E97132" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(270.837 243)">a</text>
+        <rect x="306" y="206" width="56" height="57" stroke="#052909" stroke-width="2" stroke-miterlimit="8"
+            fill="#196B24" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(327.53 243)">b</text>
+        <rect x="362" y="206" width="57" height="57" stroke="#024059" stroke-width="2" stroke-miterlimit="8"
+            fill="#0F9ED5" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(384.223 243)">c</text>
+        <rect x="419" y="206" width="57" height="57" stroke="#410C3B" stroke-width="2" stroke-miterlimit="8"
+            fill="#A02B93" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(440.916 243)">d</text>
+        <rect x="476" y="206" width="57" height="57" stroke="#1C440D" stroke-width="2" stroke-miterlimit="8"
+            fill="#4EA72E" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(497.608 243)">e</text>
+        <rect x="192" y="263" width="57" height="56" stroke="#622C0F" stroke-width="2" stroke-miterlimit="8"
+            fill="#E97132" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(214.144 300)">a</text>
+        <rect x="192" y="319" width="57" height="57" stroke="#052909" stroke-width="2" stroke-miterlimit="8"
+            fill="#196B24" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(214.144 356)">b</text>
+        <rect x="192" y="376" width="57" height="57" stroke="#024059" stroke-width="2" stroke-miterlimit="8"
+            fill="#0F9ED5" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(214.144 413)">c</text>
+        <rect x="192" y="433" width="57" height="57" stroke="#410C3B" stroke-width="2" stroke-miterlimit="8"
+            fill="#A02B93" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(214.144 470)">d</text>
+        <rect x="192" y="490" width="57" height="56" stroke="#1C440D" stroke-width="2" stroke-miterlimit="8"
+            fill="#4EA72E" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(214.144 527)">e</text>
+        <rect x="249" y="263" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(260.149 300)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(275.316 305)">00</text>
+        <rect x="306" y="263" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(316.842 300)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(332.009 305)">01</text>
+        <rect x="362" y="263" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(373.535 300)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(388.702 305)">02</text>
+        <rect x="419" y="263" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(430.228 300)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(445.395 305)">03</text>
+        <rect x="476" y="263" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(486.921 300)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(502.087 305)">04</text>
+        <rect x="249" y="319" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(260.426 356)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(275.039 361)">10</text>
+        <rect x="306" y="319" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(317.119 356)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(331.732 361)">11</text>
+        <rect x="362" y="319" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(373.812 356)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(388.425 361)">12</text>
+        <rect x="419" y="319" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(430.505 356)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(445.118 361)">13</text>
+        <rect x="476" y="319" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(487.197 356)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(501.811 361)">14</text>
+        <rect x="249" y="376" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(260.149 413)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(275.316 418)">20</text>
+        <rect x="306" y="376" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(316.842 413)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(332.009 418)">21</text>
+        <rect x="362" y="376" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(373.535 413)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(388.702 418)">22</text>
+        <rect x="419" y="376" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(430.228 413)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(445.395 418)">23</text>
+        <rect x="476" y="376" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(486.921 413)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(502.087 418)">24</text>
+        <rect x="249" y="433" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(260.149 470)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(275.316 475)">30</text>
+        <rect x="306" y="433" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(316.842 470)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(332.009 475)">31</text>
+        <rect x="362" y="433" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(373.535 470)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(388.702 475)">32</text>
+        <rect x="419" y="433" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(430.228 470)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(445.395 475)">33</text>
+        <rect x="476" y="433" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="#FEB8B8" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(486.921 470)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(502.087 475)">34</text>
+        <rect x="249" y="490" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(260.149 527)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(275.316 531)">40</text>
+        <rect x="306" y="490" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(316.842 527)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(332.009 531)">41</text>
+        <rect x="362" y="490" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(373.535 527)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(388.702 531)">42</text>
+        <rect x="419" y="490" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(430.228 527)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(445.395 531)">43</text>
+        <rect x="476" y="490" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(486.921 527)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(502.087 531)">44</text><text font-family="Aptos,Aptos_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(384.96 190)">K</text><text
+            font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(161.691 413)">Q</text>
+        <rect x="788" y="148" width="56" height="56" stroke="#042433" stroke-width="2" stroke-miterlimit="8"
+            fill="#156082" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(809.515 184)">^</text>
+        <rect x="844" y="148" width="57" height="56" stroke="#622C0F" stroke-width="2" stroke-miterlimit="8"
+            fill="#E97132" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(866.208 184)">a</text>
+        <rect x="901" y="148" width="57" height="56" stroke="#052909" stroke-width="2" stroke-miterlimit="8"
+            fill="#196B24" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(922.901 184)">b</text>
+        <rect x="958" y="148" width="57" height="56" stroke="#024059" stroke-width="2" stroke-miterlimit="8"
+            fill="#0F9ED5" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(979.594 184)">c</text>
+        <rect x="1015" y="148" width="56" height="56" stroke="#410C3B" stroke-width="2" stroke-miterlimit="8"
+            fill="#A02B93" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(1036.29 184)">d</text>
+        <rect x="1071" y="148" width="57" height="56" stroke="#1C440D" stroke-width="2" stroke-miterlimit="8"
+            fill="#4EA72E" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(1092.98 184)">e</text>
+        <rect x="731" y="204" width="57" height="57" stroke="#042433" stroke-width="2" stroke-miterlimit="8"
+            fill="#156082" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 241)">^</text>
+        <rect x="731" y="261" width="57" height="57" stroke="#622C0F" stroke-width="2" stroke-miterlimit="8"
+            fill="#E97132" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 298)">a</text>
+        <rect x="731" y="318" width="57" height="56" stroke="#052909" stroke-width="2" stroke-miterlimit="8"
+            fill="#196B24" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 355)">b</text>
+        <rect x="731" y="374" width="57" height="57" stroke="#024059" stroke-width="2" stroke-miterlimit="8"
+            fill="#0F9ED5" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 411)">c</text>
+        <rect x="731" y="431" width="57" height="57" stroke="#410C3B" stroke-width="2" stroke-miterlimit="8"
+            fill="#A02B93" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 468)">d</text>
+        <rect x="731" y="488" width="57" height="56" stroke="#1C440D" stroke-width="2" stroke-miterlimit="8"
+            fill="#4EA72E" /><text fill="#FFFFFF" font-family="Consolas,Consolas_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(752.822 525)">e</text>
+        <rect x="788" y="204" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(798.827 241)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.994 246)">00</text>
+        <rect x="844" y="204" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(854.6 241)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(872.6 241)">∞</text>
+        <rect x="901" y="204" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(911.293 241)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(929.293 241)">∞</text>
+        <rect x="958" y="204" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(967.986 241)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(985.986 241)">∞</text>
+        <rect x="1015" y="204" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1024.68 241)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1042.68 241)">∞</text>
+        <rect x="1071" y="204" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1081.37 241)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1099.37 241)">∞</text>
+        <rect x="788" y="261" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(799.104 298)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.717 303)">10</text>
+        <rect x="844" y="261" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(855.797 298)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(870.41 303)">11</text>
+        <rect x="901" y="261" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(911.293 298)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(929.293 298)">∞</text>
+        <rect x="958" y="261" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(967.986 298)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(985.986 298)">∞</text>
+        <rect x="1015" y="261" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1024.68 298)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1042.68 298)">∞</text>
+        <rect x="1071" y="261" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1081.37 298)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1099.37 298)">∞</text>
+        <rect x="788" y="318" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(798.827 355)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.994 359)">20</text>
+        <rect x="844" y="318" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(855.52 355)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(870.687 359)">21</text>
+        <rect x="901" y="318" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(912.213 355)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(927.38 359)">22</text>
+        <rect x="958" y="318" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(967.986 355)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(985.986 355)">∞</text>
+        <rect x="1015" y="318" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1024.68 355)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1042.68 355)">∞</text>
+        <rect x="1071" y="318" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1081.37 355)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1099.37 355)">∞</text>
+        <rect x="788" y="374" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(798.827 411)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.994 416)">30</text>
+        <rect x="844" y="374" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(855.52 411)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(870.687 416)">31</text>
+        <rect x="901" y="374" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(912.213 411)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(927.38 416)">32</text>
+        <rect x="958" y="374" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(968.906 411)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(984.073 416)">33</text>
+        <rect x="1015" y="374" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1024.68 411)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1042.68 411)">∞</text>
+        <rect x="1071" y="374" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1081.37 411)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1099.37 411)">∞</text>
+        <rect x="788" y="431" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(798.827 468)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.994 473)">40</text>
+        <rect x="844" y="431" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(855.52 468)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(870.687 473)">41</text>
+        <rect x="901" y="431" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(912.213 468)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(927.38 473)">42</text>
+        <rect x="958" y="431" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(968.906 468)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(984.073 473)">43</text>
+        <rect x="1015" y="431" width="56" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1025.6 468)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(1040.77 473)">44</text>
+        <rect x="1071" y="431" width="57" height="57" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1081.37 468)">−</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(1099.37 468)">∞</text>
+        <rect x="788" y="488" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(798.827 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(813.994 530)">50</text>
+        <rect x="844" y="488" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(855.52 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(870.687 530)">51</text>
+        <rect x="901" y="488" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(912.213 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(927.38 530)">52</text>
+        <rect x="958" y="488" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(968.906 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(984.073 530)">53</text>
+        <rect x="1015" y="488" width="56" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1025.6 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(1040.77 530)">54</text>
+        <rect x="1071" y="488" width="57" height="56" stroke="#000000" stroke-width="2" stroke-miterlimit="8"
+            fill="none" /><text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400"
+            font-size="24" transform="translate(1082.29 525)">𝐴</text><text
+            font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-weight="400" font-size="17.52"
+            transform="translate(1097.46 530)">55</text><text font-family="Aptos,Aptos_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(950.837 136)">K</text><text
+            font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(693.783 382)">Q</text><text font-family="Aptos,Aptos_MSFontService,sans-serif"
+            font-weight="400" font-size="24" transform="translate(327.549 599)">Normal</text><text
+            font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="24"
+            transform="translate(912.549 599)">Masked</text><text fill="#FF0000"
+            font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="700" font-size="24"
+            transform="translate(549.549 299)">Lookahead</text><text fill="#FF0000"
+            font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="700" font-size="24"
+            transform="translate(549.549 328)">Zone!</text>
+    </g>
+</svg>
